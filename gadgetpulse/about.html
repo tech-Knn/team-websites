@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="impact-site-verification" value="3d35c4e1-7d13-41ac-bc4b-34d6ef9084db" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – GadgetPulse</title>
+  <meta name="description" content="GadgetPulse is a tech review site built by enthusiasts who are tired of marketing noise. We test products honestly and tell you the truth." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gadgetpulse.info/about.html" />
+  <meta property="og:title" content="About Us – GadgetPulse" />
+  <meta property="og:description" content="GadgetPulse — honest tech reviews from people who actually use the products." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Us – GadgetPulse" />
+  <meta name="twitter:description" content="GadgetPulse — honest tech reviews from people who actually use the products." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200&q=80" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+  <style>
+    .about-hero { position:relative; height:480px; overflow:hidden; background:var(--secondary); }
+    .about-hero img { width:100%; height:100%; object-fit:cover; opacity:0.25; }
+    .about-hero-overlay { position:absolute; inset:0; display:flex; align-items:center; background:linear-gradient(to right,rgba(15,23,42,.95) 55%,transparent 100%); }
+    .about-hero-content { color:white; max-width:600px; }
+    .about-badge { display:inline-block; background:var(--primary); color:white; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:5px 14px; border-radius:20px; margin-bottom:18px; }
+    .about-hero-content h1 { font-family:'Space Grotesk',sans-serif; font-size:48px; font-weight:800; line-height:1.15; margin-bottom:16px; }
+    .about-hero-content p { font-size:17px; color:rgba(255,255,255,.8); line-height:1.75; max-width:520px; }
+
+    .breadcrumb { background:var(--bg-alt); padding:12px 0; font-size:13px; color:var(--gray); border-bottom:1px solid var(--light-gray); }
+    .breadcrumb .container { display:flex; align-items:center; gap:8px; }
+    .breadcrumb a { color:var(--primary); }
+    .breadcrumb span { color:var(--light-gray); }
+
+    .story-section { padding:80px 0; }
+    .story-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+    .story-img-wrap { position:relative; border-radius:var(--radius); overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.15); }
+    .story-img-wrap img { width:100%; height:420px; object-fit:cover; }
+    .story-content h2 { font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:800; color:var(--dark); margin-bottom:20px; line-height:1.25; }
+    .story-content h2 span { color:var(--primary); }
+    .story-content p { font-size:15.5px; color:var(--gray); line-height:1.85; margin-bottom:18px; }
+    .story-quote { border-left:4px solid var(--primary); padding:16px 20px; background:var(--bg-alt); border-radius:0 var(--radius-sm) var(--radius-sm) 0; margin:24px 0; font-family:'Space Grotesk',sans-serif; font-size:17px; font-style:italic; color:var(--secondary); line-height:1.65; }
+
+    .values-section { padding:72px 0; background:var(--secondary); color:var(--white); }
+    .values-section .section-title { color:var(--white); }
+    .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:40px; }
+    .value-card { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); border-radius:var(--radius); padding:32px 28px; transition:all var(--transition); }
+    .value-card:hover { background:rgba(255,255,255,.12); transform:translateY(-4px); }
+    .value-icon { width:52px; height:52px; background:rgba(14,165,233,.2); border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; color:var(--accent-light); }
+    .value-card h3 { font-family:'Space Grotesk',sans-serif; font-size:20px; font-weight:700; margin-bottom:10px; color:var(--white); }
+    .value-card p { font-size:14px; color:rgba(255,255,255,.7); line-height:1.7; }
+
+    .stats-section { padding:72px 0; background:var(--bg-alt); }
+    .stats-grid-about { display:grid; grid-template-columns:repeat(4,1fr); gap:28px; text-align:center; }
+    .stat-card { background:var(--white); border-radius:var(--radius); padding:36px 24px; box-shadow:var(--card-shadow); }
+    .stat-num-about { font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:800; color:var(--primary); line-height:1; margin-bottom:10px; }
+    .stat-label-about { font-size:14px; color:var(--gray); font-weight:500; line-height:1.4; }
+
+    .team-section { padding:72px 0; }
+    .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:40px; }
+    .team-card { background:var(--white); border-radius:var(--radius); padding:32px 24px; box-shadow:var(--card-shadow); text-align:center; transition:all var(--transition); }
+    .team-card:hover { transform:translateY(-4px); box-shadow:var(--card-shadow-hover); }
+    .team-img { width:90px; height:90px; border-radius:50%; object-fit:cover; margin:0 auto 16px; border:3px solid var(--primary); }
+    .team-name { font-family:'Space Grotesk',sans-serif; font-size:20px; font-weight:700; color:var(--dark); margin-bottom:4px; }
+    .team-role { font-size:13px; font-weight:600; color:var(--primary); text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; }
+    .team-bio { font-size:13.5px; color:var(--gray); line-height:1.65; }
+
+    .contact-section { padding:72px 0; }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
+    .contact-block h2 { font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:800; color:var(--dark); margin-bottom:14px; }
+    .contact-block p { font-size:15px; color:var(--gray); line-height:1.8; margin-bottom:28px; }
+    .contact-detail { display:flex; gap:16px; align-items:flex-start; padding:20px 0; border-bottom:1px solid var(--bg-alt); }
+    .contact-detail:last-child { border-bottom:none; }
+    .detail-icon { width:44px; height:44px; background:rgba(14,165,233,.08); border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--primary); }
+    .detail-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--gray); margin-bottom:4px; }
+    .detail-value { font-size:15px; color:var(--dark); font-weight:500; line-height:1.55; }
+    .detail-value a { color:var(--primary); }
+    .detail-value a:hover { text-decoration:underline; }
+    .cta-card { background:linear-gradient(135deg,var(--primary) 0%,#0369A1 100%); border-radius:var(--radius); padding:44px 40px; color:white; }
+    .cta-card h3 { font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:800; margin-bottom:14px; line-height:1.3; }
+    .cta-card p { font-size:15px; opacity:.88; line-height:1.7; margin-bottom:28px; }
+    .btn-white { display:inline-block; background:white; color:var(--primary); font-weight:700; font-size:14px; padding:12px 28px; border-radius:30px; transition:all var(--transition); }
+    .btn-white:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.2); }
+
+    @media(max-width:768px){
+      .story-grid,.contact-grid{grid-template-columns:1fr;}
+      .values-grid{grid-template-columns:1fr 1fr;}
+      .stats-grid-about{grid-template-columns:1fr 1fr;}
+      .team-grid{grid-template-columns:1fr;}
+      .about-hero-content h1{font-size:34px;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 46 46" fill="none">
+          <circle cx="23" cy="23" r="23" fill="#0F172A"/>
+          <rect x="11" y="11" width="24" height="24" rx="3" fill="none" stroke="#0EA5E9" stroke-width="1.5" opacity="0.5"/>
+          <path d="M26 13 L19 24 L23 24 L20 33 L27 22 L23 22 Z" fill="#0EA5E9"/>
+          <circle cx="11" cy="11" r="1.5" fill="#38BDF8"/>
+          <circle cx="35" cy="11" r="1.5" fill="#38BDF8"/>
+          <circle cx="11" cy="35" r="1.5" fill="#38BDF8"/>
+          <circle cx="35" cy="35" r="1.5" fill="#38BDF8"/>
+        </svg>
+        <div class="logo-text">
+          <div class="logo-name"><span>Gadget</span><span>Pulse</span></div>
+          <div class="logo-tagline">Stay Charged. Stay Ahead.</div>
+        </div>
+      </a>
+      <nav id="main-nav">
+        <ul id="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="active"><a href="about.html">About</a></li>
+          <li class="nav-cta"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<section class="about-hero">
+  <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=1600&q=80" alt="Tech workspace" />
+  <div class="about-hero-overlay">
+    <div class="container">
+      <div class="about-hero-content">
+        <span class="about-badge">Our Story</span>
+        <h1>Tech Reviews You Can Actually Trust</h1>
+        <p>GadgetPulse was built on a simple premise: honest reviews from people who actually use the products — not brands paying for coverage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="index.html">Home</a><span>›</span><span>About Us</span>
+  </div>
+</div>
+
+<section class="story-section">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-img-wrap">
+        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=900&q=80" alt="Tech testing" />
+      </div>
+      <div class="story-content">
+        <h2>Why We Built <span>GadgetPulse</span></h2>
+        <p>We started GadgetPulse because we were frustrated. Frustrated by review sites that score products 9/10 regardless of real-world performance. Frustrated by YouTube channels that only cover products from sponsors. Frustrated by spec sheets that tell you nothing about whether a gadget is actually worth buying.</p>
+        <p>We are a small team of engineers, power users, and everyday tech enthusiasts who actually purchase the products we cover, use them as our primary devices for weeks or months, and then tell you the unvarnished truth about what works, what doesn't, and what's genuinely worth your money.</p>
+        <div class="story-quote">"We don't review products we haven't owned. That's the only rule that matters at GadgetPulse."</div>
+        <p>From flagship smartphones that cost $1,200 to budget laptops under $400 — every product on GadgetPulse has been in our hands, on our desks, or in our ears before we write a single word about it. That's not a policy. It's who we are.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values-section">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center;">What We Stand For</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Radical Honesty</h3>
+        <p>If a product has a bad display, we say so. If the build quality is disappointing, you'll read about it. Our advertisers don't affect our scores — ever.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <h3>Hands-On Testing Only</h3>
+        <p>We never review from a press release or a 30-minute demo. Every product gets weeks of real use before we publish a word.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h3>Value at Every Budget</h3>
+        <p>Not everyone can spend $1,500 on a phone. We cover the full price spectrum because smart buying decisions matter at $300 just as much as $1,200.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3>Real-World Context</h3>
+        <p>We test gadgets as normal people use them — on commutes, at desks, during gaming sessions. Not in lab conditions that mean nothing in daily life.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Transparent About Affiliates</h3>
+        <p>Some links earn us a commission. We always disclose this. We only link to products we'd recommend regardless of whether there's an affiliate program.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <h3>Always Up to Date</h3>
+        <p>Tech moves fast. We update our buying guides and reviews regularly as new products launch and prices change. You'll always see the current recommendation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center;margin-bottom:40px;">GadgetPulse by the Numbers</h2>
+    <div class="stats-grid-about">
+      <div class="stat-card"><div class="stat-num-about">200+</div><div class="stat-label-about">Products Reviewed</div></div>
+      <div class="stat-card"><div class="stat-num-about">50K+</div><div class="stat-label-about">Monthly Readers</div></div>
+      <div class="stat-card"><div class="stat-num-about">5 Yrs</div><div class="stat-label-about">Of Hands-On Testing</div></div>
+      <div class="stat-card"><div class="stat-num-about">100%</div><div class="stat-label-about">Independent Reviews</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center;margin-bottom:40px;">Meet the Team</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <img class="team-img" src="https://i.pravatar.cc/150?img=11" alt="Alex Chen" />
+        <div class="team-name">Alex Chen</div>
+        <div class="team-role">Editor-in-Chief</div>
+        <p class="team-bio">Alex has been covering consumer electronics for over a decade. Former hardware engineer, now obsessed with helping people cut through marketing spin. Especially ruthless about smartphone cameras and displays.</p>
+      </div>
+      <div class="team-card">
+        <img class="team-img" src="https://i.pravatar.cc/150?img=5" alt="Priya Nair" />
+        <div class="team-name">Priya Nair</div>
+        <div class="team-role">Senior Reviewer</div>
+        <p class="team-bio">Priya covers laptops, monitors, keyboards, and smart home tech. She brings an engineer's eye and a teacher's voice to every review — explaining trade-offs clearly without dumbing things down.</p>
+      </div>
+      <div class="team-card">
+        <img class="team-img" src="https://i.pravatar.cc/150?img=29" alt="Marcus Webb" />
+        <div class="team-name">Marcus Webb</div>
+        <div class="team-role">Gaming Editor</div>
+        <p class="team-bio">Marcus has been gaming seriously since age 12 and now turns that into work — testing headsets, controllers, and gaming peripherals across every platform. If it's made for gamers, Marcus has already broken it twice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-block">
+        <h2>Get in Touch</h2>
+        <p>Have a question, a product you'd like us to review, or a collaboration idea? We read every message and get back to you within 24–48 hours.</p>
+        <div class="contact-detail">
+          <div class="detail-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <div class="detail-label">Email</div>
+            <div class="detail-value"><a href="mailto:kushagra@kareerllc.com">kushagra@kareerllc.com</a></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="detail-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="detail-label">Registered Address</div>
+            <div class="detail-value">MICHELLE RODRIGUEZ SOLE MBR<br>30 N Gould St Ste R<br>Sheridan, WY 82801</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="detail-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div>
+            <div class="detail-label">Response Time</div>
+            <div class="detail-value">Within 24–48 hours</div>
+          </div>
+        </div>
+      </div>
+      <div class="cta-card">
+        <h3>Want to Write for GadgetPulse?</h3>
+        <p>We work with guest contributors who have genuine hands-on experience with the products they write about. No PR ghostwriters, no spec-sheet regurgitation — just real reviewers with real opinions.</p>
+        <a href="contact.html" class="btn-white">Send a Pitch →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter-section">
+  <div class="container">
+    <h2>Never Miss a Review</h2>
+    <p>Join our readers and get fresh tech reviews, buying guides, and honest takes straight to your inbox.</p>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" placeholder="your@email.com" />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="margin-bottom:14px;display:inline-flex;">
+          <svg class="logo-icon" viewBox="0 0 46 46" fill="none">
+            <circle cx="23" cy="23" r="23" fill="#0F172A"/>
+            <rect x="11" y="11" width="24" height="24" rx="3" fill="none" stroke="#0EA5E9" stroke-width="1.5" opacity="0.5"/>
+            <path d="M26 13 L19 24 L23 24 L20 33 L27 22 L23 22 Z" fill="#38BDF8"/>
+            <circle cx="11" cy="11" r="1.5" fill="#38BDF8"/>
+            <circle cx="35" cy="11" r="1.5" fill="#38BDF8"/>
+            <circle cx="11" cy="35" r="1.5" fill="#38BDF8"/>
+            <circle cx="35" cy="35" r="1.5" fill="#38BDF8"/>
+          </svg>
+          <div class="logo-text"><div class="logo-name"><span>Gadget</span><span>Pulse</span></div><div class="logo-tagline">Stay Charged. Stay Ahead.</div></div>
+        </a>
+        <p class="footer-desc">GadgetPulse — honest, hands-on tech reviews and buying guides from people who actually use the products.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blogs.html">All Blogs</a></li>
+          <li class="active"><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Write for Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Categories</div>
+        <ul class="footer-links">
+          <li><a href="blogs.html?cat=reviews">Reviews</a></li>
+          <li><a href="blogs.html?cat=how-to">How-To</a></li>
+          <li><a href="blogs.html">Buying Guides</a></li>
+          <li><a href="blogs.html?cat=buying-guides">Buying Guides</a></li>
+          <li><a href="blogs.html">Gaming</a></li>
+          <li><a href="blogs.html">Apps &amp; Software</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <ul class="footer-links">
+          <li><a href="mailto:kushagra@kareerllc.com">kushagra@kareerllc.com</a></li>
+          <li><a href="contact.html">Send a Message</a></li>
+          <li><a href="contact.html">Write for Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 GadgetPulse · gadgetpulse.info · All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</div>
+
+<script>
+function toggleNav() {
+  document.getElementById('nav-list').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('active');
+}
+window.addEventListener('scroll', () => {
+  document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+});
+</script>
+</body>
+</html>

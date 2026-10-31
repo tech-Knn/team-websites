@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="impact-site-verification" value="3d35c4e1-7d13-41ac-bc4b-34d6ef9084db" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – TripsyTravel</title>
+  <meta name="description" content="Get in touch with the TripsyTravel team. We'd love to hear from you — questions, collaborations, or just to say hello." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.tripsytravel.info/contact.html" />
+  <meta property="og:title" content="Contact Us – TripsyTravel" />
+  <meta property="og:description" content="Get in touch with the TripsyTravel team. Questions, collaborations, or just to say hello." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact Us – TripsyTravel" />
+  <meta name="twitter:description" content="Get in touch with the TripsyTravel team. Questions, collaborations, or just to say hello." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+  <style>
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--secondary) 0%, #002D3D 100%);
+      padding: 72px 0 60px;
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1400&q=40') center/cover;
+      opacity: 0.1;
+    }
+    .page-hero-inner { position: relative; z-index: 1; }
+    .page-hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--accent-light);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 16px; border-radius: 20px;
+      margin-bottom: 18px;
+    }
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px; font-weight: 800;
+      line-height: 1.15; margin-bottom: 16px;
+    }
+    .page-hero p {
+      font-size: 17px; color: rgba(255,255,255,0.8);
+      max-width: 520px; margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      background: var(--bg-alt);
+      padding: 12px 0;
+      font-size: 13px;
+      color: var(--gray);
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .breadcrumb .container { display: flex; align-items: center; gap: 8px; }
+    .breadcrumb a { color: var(--primary); }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { color: var(--light-gray); }
+
+    /* ── CONTACT LAYOUT ── */
+    .contact-section { padding: 72px 0; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ── CONTACT FORM ── */
+    .contact-form-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      padding: 44px;
+    }
+    .contact-form-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px; font-weight: 800;
+      color: var(--dark); margin-bottom: 8px;
+    }
+    .contact-form-card > p {
+      font-size: 14.5px; color: var(--gray);
+      line-height: 1.65; margin-bottom: 32px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .form-group { display: flex; flex-direction: column; margin-bottom: 16px; }
+    .form-group label {
+      font-size: 13px; font-weight: 600;
+      color: var(--dark); margin-bottom: 7px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border: 1.5px solid var(--light-gray);
+      border-radius: var(--radius-sm);
+      padding: 11px 14px;
+      font-size: 14.5px;
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: var(--bg);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      resize: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(232,68,10,0.1);
+      background: var(--white);
+    }
+    .form-group textarea { height: 140px; }
+    .form-submit-btn {
+      width: 100%;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 30px;
+      padding: 14px 24px;
+      font-size: 15px; font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: all var(--transition);
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      margin-top: 8px;
+    }
+    .form-submit-btn:hover { background: var(--primary-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,68,10,0.3); }
+    .form-note { font-size: 12px; color: var(--gray); text-align: center; margin-top: 12px; }
+
+    /* ── CONTACT INFO SIDEBAR ── */
+    .contact-info { display: flex; flex-direction: column; gap: 20px; }
+
+    .info-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      padding: 28px;
+    }
+    .info-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px; font-weight: 700;
+      color: var(--dark); margin-bottom: 18px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .info-card-title svg { color: var(--primary); flex-shrink: 0; }
+
+    .info-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      margin-bottom: 18px;
+    }
+    .info-item:last-child { margin-bottom: 0; }
+    .info-icon {
+      width: 40px; height: 40px;
+      background: rgba(232,68,10,0.08);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--primary);
+    }
+    .info-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray); margin-bottom: 3px; }
+    .info-value { font-size: 14.5px; color: var(--dark); font-weight: 500; line-height: 1.5; }
+    .info-value a { color: var(--primary); }
+    .info-value a:hover { text-decoration: underline; }
+
+
+    /* ── FAQ STRIP ── */
+    .faq-section { padding: 64px 0; background: var(--bg-alt); }
+    .faq-section .section-header { margin-bottom: 36px; }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      cursor: pointer;
+    }
+    .faq-question {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px; font-weight: 700;
+      color: var(--dark);
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+      margin-bottom: 12px;
+    }
+    .faq-question svg { flex-shrink: 0; color: var(--primary); margin-top: 3px; }
+    .faq-answer { font-size: 14px; color: var(--gray); line-height: 1.7; }
+
+    /* ── MAP PLACEHOLDER ── */
+    .map-section { padding: 0 0 72px; }
+    .map-frame {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      height: 360px;
+      background: linear-gradient(135deg, var(--secondary), #003348);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 16px;
+      color: rgba(255,255,255,0.8);
+    }
+    .map-frame svg { opacity: 0.6; }
+    .map-frame p { font-size: 15px; opacity: 0.7; }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .page-hero h1 { font-size: 34px; }
+      .contact-form-card { padding: 28px; }
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <a href="contact.html">FAQ</a>
+      <a href="about.html">Our Team</a>
+      <a href="javascript:void(0)">Gallery</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="23" fill="#E8440A"/><path d="M10 23 L38 14 L32 23 L38 32 Z" fill="white" opacity="0.95"/><circle cx="27" cy="21" r="2" fill="#E8440A"/><path d="M10 23 L20 26 L18 31 Z" fill="white" opacity="0.7"/><path d="M14 35 Q23 30 32 35" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/><circle cx="8" cy="14" r="1.2" fill="#FFD166"/></svg>
+        <div class="logo-text">
+          <div class="logo-name"><span>Tripsy</span><span>Travel</span></div>
+          <div class="logo-tagline">Wander More, Worry Less</div>
+        </div>
+      </a>
+      <nav>
+        <ul id="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blogs.html">Places</a></li>
+          <li><a href="blogs.html">Food &amp; Culture</a></li>
+          <li><a href="blogs.html">Stories</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li class="nav-cta active"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" onclick="document.getElementById('nav-list').classList.toggle('open')"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="index.html">Home</a><span>›</span><span>Contact Us</span>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-badge">✈ Get in Touch</div>
+    <h1>We'd Love to Hear<br>From You</h1>
+    <p>Have a question, a story idea, or just want to say hello? Drop us a message — we read every single one.</p>
+  </div>
+</section>
+
+<!-- CONTACT FORM + INFO -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Form -->
+      <div class="contact-form-card">
+        <h2>Send Us a Message</h2>
+        <p>Fill in the form below and we'll get back to you within 24–48 hours. For partnership or advertising enquiries, please mention that in the subject line.</p>
+
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">First Name *</label>
+              <input type="text" id="first-name" placeholder="First name" required />
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" placeholder="Last name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <select id="subject" required>
+              <option value="" disabled selected>Select a topic…</option>
+              <option>General Enquiry</option>
+              <option>Write for Us / Guest Post</option>
+              <option>Advertising &amp; Partnerships</option>
+              <option>Press &amp; Media</option>
+              <option>Report an Error</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message *</label>
+            <textarea id="message" placeholder="Tell us what's on your mind…" required></textarea>
+          </div>
+          <button type="submit" class="form-submit-btn">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Message
+          </button>
+          <p class="form-note">🔒 We never share your information with third parties.</p>
+        </form>
+      </div>
+
+      <!-- Info sidebar -->
+      <div class="contact-info">
+
+        <div class="info-card">
+          <div class="info-card-title">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Contact Details
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="info-label">Email</div>
+              <div class="info-value"><a href="mailto:kushagra@kareerllc.com">kushagra@kareerllc.com</a></div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="info-label">Address</div>
+              <div class="info-value">MICHELLE RODRIGUEZ SOLE MBR<br>30 N Gould St Ste R<br>Sheridan, WY 82801</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.09 1.22 2 2 0 012.07.04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="info-label">Response Time</div>
+              <div class="info-value">Within 24–48 hours</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-title">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            For Partnerships &amp; Press
+          </div>
+          <p style="font-size:13.5px;color:var(--gray);line-height:1.65;margin-bottom:14px;">Interested in advertising, sponsored content, press trips, or media coverage? Reach us directly at:</p>
+          <p style="font-size:14px;font-weight:600;color:var(--primary);margin-bottom:6px;"><a href="mailto:kushagra@kareerllc.com" style="color:inherit;">kushagra@kareerllc.com</a></p>
+          <p style="font-size:13px;color:var(--gray);">Include your brand, campaign brief, and timeline for a faster response.</p>
+        </div>
+
+      </div><!-- /contact-info -->
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <a href="about.html" class="see-all">About Us ›</a>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-question">
+          Can I write for TripsyTravel?
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">Yes! We love hearing from passionate travelers. Send us a pitch with your proposed topic, a short outline, and 2–3 links to your previous writing to kushagra@kareerllc.com with the subject "Write for Us".</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Do you accept sponsored posts?
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">We do accept sponsored content and brand partnerships, but only with travel brands we genuinely believe in. All sponsored content is clearly labeled. Reach out to kushagra@kareerllc.com with details about your brand and campaign.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          How often do you publish new content?
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">We publish 3–5 new travel guides and stories every week. Subscribe to our newsletter to get the best ones delivered straight to your inbox every Friday morning.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          I found an error in one of your articles — how do I report it?
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">Travel information changes fast and we appreciate the help keeping our guides accurate. Use the contact form above with the subject "Report an Error" and include the article title and what needs updating. We'll review and update promptly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Do you offer personalised travel planning?
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">We don't offer custom itinerary planning as a service, but our guides are designed to be comprehensive enough to plan your trip with. If you have a specific question, drop us a message and we'll do our best to point you in the right direction.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          How do affiliate links work on TripsyTravel?
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-answer">Some links in our articles are affiliate links — if you book or buy through them, we earn a small commission at no extra cost to you. We only recommend products and services we've used ourselves or genuinely trust.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section">
+  <div class="container">
+    <div class="map-frame">
+      <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <p>Remote-first team across Europe, Asia, and the Americas</p>
+      <p style="font-size:13px;opacity:0.5;">We don't have a physical office — we're always on the road</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="container">
+    <h2>Never Miss a Travel Story</h2>
+    <p>Join over 18,000 curious wanderers who get the best travel guides, tips &amp; deals every week.</p>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" placeholder="Enter your email address…" />
+      <button type="submit">Subscribe Free ✈</button>
+    </form>
+    <p style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:12px;">No spam. Unsubscribe at any time.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="margin-bottom:14px;display:inline-flex;">
+          <svg class="logo-icon" viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="23" fill="#E8440A"/><path d="M10 23 L38 14 L32 23 L38 32 Z" fill="white" opacity="0.95"/><circle cx="27" cy="21" r="2" fill="#E8440A"/><circle cx="8" cy="14" r="1.2" fill="#FFD166"/></svg>
+          <div class="logo-text"><div class="logo-name"><span>Tripsy</span><span>Travel</span></div><div class="logo-tagline">Wander More, Worry Less</div></div>
+        </a>
+        <p class="footer-desc">TripsyTravel — honest, first-hand travel stories and practical guides from every corner of the globe.</p>
+      </div>
+      <div><div class="footer-heading">Quick Links</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="blogs.html">All Blogs</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+      <div><div class="footer-heading">Categories</div><ul class="footer-links"><li><a href="blogs.html">Places</a></li><li><a href="blogs.html">Food &amp; Culture</a></li><li><a href="blogs.html">Stories</a></li><li><a href="blogs.html">Tips &amp; Tricks</a></li><li><a href="blogs.html">Adventure</a></li></ul></div>
+      <div><div class="footer-heading">Gallery</div><div class="footer-gallery"><div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=150&q=65" alt="" loading="lazy"/></div><div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=150&q=65" alt="" loading="lazy"/></div><div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=150&q=65" alt="" loading="lazy"/></div><div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?w=150&q=65" alt="" loading="lazy"/></div><div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=150&q=65" alt="" loading="lazy"/></div><div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=150&q=65" alt="" loading="lazy"/></div></div></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TripsyTravel · tripsytravel.info · All rights reserved.</span>
+      <div class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit-btn');
+    btn.textContent = '✓ Message Sent!';
+    btn.style.background = '#16A34A';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message';
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 3000);
+  }
+</script>
+</body>
+</html>

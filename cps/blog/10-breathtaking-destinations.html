@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="impact-site-verification" value="3d35c4e1-7d13-41ac-bc4b-34d6ef9084db" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10 Breathtaking Destinations – TripsyTravel</title>
+  <meta name="description" content="From Patagonia to Tokyo — discover the travel destinations that will redefine adventure for you in 2026." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg" />
+  <style>
+    /* ── POST PAGE SPECIFIC STYLES ── */
+    .post-hero {
+      position: relative;
+      height: 480px;
+      overflow: hidden;
+      background: #0D1B2A;
+    }
+    .post-hero img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+    .post-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,30,50,0.2) 0%, rgba(0,20,40,0.8) 100%);
+      display: flex; align-items: flex-end;
+      padding-bottom: 48px;
+    }
+    .post-hero-content { color: white; max-width: 800px; }
+    .post-hero-cat {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .post-hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px; font-weight: 800;
+      line-height: 1.2; margin-bottom: 16px;
+    }
+    .post-hero-meta {
+      display: flex; gap: 24px; flex-wrap: wrap;
+      font-size: 13px; color: rgba(255,255,255,0.75);
+    }
+    .post-hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* Post layout */
+    .post-layout {
+      padding: 56px 0;
+    }
+    .post-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 40px;
+    }
+
+    /* Article body */
+    .post-body {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+    }
+    .post-content {
+      padding: 40px;
+      max-width: 720px;
+    }
+    .post-content .lead {
+      font-size: 18px;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 28px;
+      font-style: italic;
+      border-left: 4px solid var(--primary);
+      padding-left: 20px;
+    }
+    .post-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 36px 0 16px;
+    }
+    .post-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--secondary);
+      margin: 28px 0 12px;
+    }
+    .post-content p {
+      font-size: 15.5px;
+      line-height: 1.85;
+      color: #374151;
+      margin-bottom: 20px;
+    }
+    .post-content img {
+      width: 100%; border-radius: var(--radius-sm);
+      margin: 24px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .post-content .image-caption {
+      font-size: 12.5px;
+      color: var(--gray);
+      text-align: center;
+      margin-top: -16px;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .post-content ul, .post-content ol {
+      padding-left: 24px;
+      margin-bottom: 20px;
+    }
+    .post-content li {
+      font-size: 15.5px;
+      line-height: 1.8;
+      color: #374151;
+      margin-bottom: 8px;
+    }
+    .post-content blockquote {
+      background: var(--bg-alt);
+      border-left: 5px solid var(--primary);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+      font-size: 17px;
+      font-style: italic;
+      color: var(--secondary);
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Destination card inside post */
+    .dest-highlight {
+      background: linear-gradient(135deg, var(--secondary), #003348);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 28px 0;
+      color: white;
+    }
+    .dest-highlight-num {
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--accent-light);
+      font-family: 'Playfair Display', serif;
+      line-height: 1;
+    }
+    .dest-highlight h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .dest-highlight p { font-size: 14px; color: rgba(255,255,255,0.8); margin-bottom: 0; }
+
+    /* Tags */
+    .post-tags {
+      padding: 24px 40px;
+      border-top: 1px solid var(--bg-alt);
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .post-tags-label { font-size: 13px; font-weight: 700; color: var(--dark); }
+
+    /* Share bar */
+    .post-share {
+      padding: 24px 40px;
+      border-top: 1px solid var(--bg-alt);
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    }
+    .share-label { font-size: 13px; font-weight: 700; color: var(--dark); }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 12.5px; font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .share-fb  { background: #1877F2; color: white; }
+    .share-tw  { background: #1DA1F2; color: white; }
+    .share-pin { background: #E60023; color: white; }
+    .share-wa  { background: #25D366; color: white; }
+    .share-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    /* Author box */
+    .author-box {
+      margin: 0 40px 40px;
+      background: var(--bg-alt);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .author-box img {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary);
+      flex-shrink: 0;
+    }
+    .author-box-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px; font-weight: 700; margin-bottom: 5px;
+    }
+    .author-box p { font-size: 13.5px; color: var(--gray); line-height: 1.6; }
+
+    /* Related posts */
+    .related-posts { margin-top: 48px; }
+
+    @media (max-width: 768px) {
+      .post-grid { grid-template-columns: 1fr; }
+      .post-hero-title { font-size: 26px; }
+      .post-hero { height: 320px; }
+      .post-content { padding: 24px; }
+      .post-tags, .post-share, .author-box { margin-left: 0; margin-right: 0; padding-left: 24px; padding-right: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <a href="../contact.html">FAQ</a>
+      <a href="../about.html">Our Team</a>
+      <a href="javascript:void(0)">Gallery</a>
+      <a href="javascript:void(0)">Contact Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 46 46" fill="none">
+          <circle cx="23" cy="23" r="23" fill="#E8440A"/>
+          <path d="M10 23 L38 14 L32 23 L38 32 Z" fill="white" opacity="0.95"/>
+          <circle cx="27" cy="21" r="2" fill="#E8440A"/>
+          <path d="M10 23 L20 26 L18 31 Z" fill="white" opacity="0.7"/>
+          <path d="M14 35 Q23 30 32 35" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+          <circle cx="8" cy="14" r="1.2" fill="#FFD166"/>
+        </svg>
+        <div class="logo-text">
+          <div class="logo-name"><span>Tripsy</span><span>Travel</span></div>
+          <div class="logo-tagline">Wander More, Worry Less</div>
+        </div>
+      </a>
+      <nav id="main-nav">
+        <ul id="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../blogs.html">Places</a></li>
+          <li><a href="../blogs.html">Food &amp; Culture</a></li>
+          <li><a href="../blogs.html">Stories</a></li>
+          <li class="active"><a href="javascript:void(0)">Blogs</a></li>
+          <li class="nav-cta"><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" onclick="document.getElementById('nav-list').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="container">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../blogs.html">Places</a>
+    <span>›</span>
+    10 Breathtaking Destinations You Must Visit Before 2026
+  </div>
+</div>
+
+<!-- POST HERO -->
+<div class="post-hero">
+  <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80" alt="Travel destinations" />
+  <div class="post-hero-overlay">
+    <div class="container">
+      <div class="post-hero-content">
+        <span class="post-hero-cat">Places &amp; Destinations</span>
+        <h1 class="post-hero-title">10 Breathtaking Destinations You Must Visit Before 2026</h1>
+        <div class="post-hero-meta">
+          <span>
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            By TripsyTravel
+          </span>
+          <span>
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            October 22, 2026
+          </span>
+          <span>
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            12 min read
+          </span>
+          <span>
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            18 Comments
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POST CONTENT -->
+<div class="post-layout">
+  <div class="container">
+    <div class="post-grid">
+
+      <!-- ARTICLE -->
+      <article class="post-body">
+        <div class="post-content">
+
+          <p class="lead">
+            From the wind-scoured spires of Patagonia to the electric pulse of Tokyo's neon streets, these ten destinations aren't just places to visit — they're experiences that will rewire the way you see the world.
+          </p>
+
+          <p>
+            We've spent the last three years chasing sunsets, missing flights, eating things we couldn't name, and sleeping in places ranging from five-star villas to crumbling hostels. What emerged from all that wandering is this list — a deeply personal, rigorously tested collection of destinations that we believe every curious traveler should experience at least once.
+          </p>
+
+          <p>
+            These aren't just "pretty places." Each one offers something distinct: a particular kind of silence, a cuisine that humbles every other food memory you have, a landscape so alien it makes you question what the word "earth" even means. They are transformative.
+          </p>
+
+          <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=900&q=80" alt="Patagonia landscape" />
+          <p class="image-caption">Torres del Paine at golden hour — Patagonia, Chile. Photo: Unsplash</p>
+
+          <h2>The Full List of 10 Destinations</h2>
+
+          <div class="dest-highlight">
+            <div class="dest-highlight-num">01</div>
+            <h4>Patagonia, Chile &amp; Argentina</h4>
+            <p>End-of-the-world drama on an epic scale. Torres del Paine's granite spires, turquoise glacial lakes, and howling winds create a landscape that feels beyond cinematic. The W Trek is world-class but book early — permits run out fast.</p>
+          </div>
+
+          <p>
+            Patagonia is one of those places that stays with you long after you've left. The sheer scale of it — the way the wind pushes back against every step — is humbling in the best possible way. We'd recommend spending at least 10 days here; rushing it is doing yourself a disservice.
+          </p>
+
+          <div class="dest-highlight">
+            <div class="dest-highlight-num">02</div>
+            <h4>Kyoto, Japan — Off-Season</h4>
+            <p>Skip the cherry blossom crowds and visit in autumn (October–November) or deep winter. The bamboo grove, Fushimi Inari, and the ancient tea houses hit differently without 3,000 selfie sticks in frame.</p>
+          </div>
+
+          <div class="dest-highlight">
+            <div class="dest-highlight-num">03</div>
+            <h4>The Faroe Islands, Denmark</h4>
+            <p>Dramatics cliffs, green-turf-roofed houses, and a road that quite literally drives into a lake. Only 50,000 people live here but it might be the most spectacular landscape in Europe. Bring layers.</p>
+          </div>
+
+          <blockquote>
+            "Travel is the only thing you buy that makes you richer — and these ten destinations are worth every penny and every delayed flight to reach them."
+          </blockquote>
+
+          <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=900&q=80" alt="Japan shrine" />
+          <p class="image-caption">The iconic Fushimi Inari shrine gates at dusk, Kyoto, Japan.</p>
+
+          <h2>Getting There &amp; Practical Tips</h2>
+
+          <h3>Best Time to Visit</h3>
+          <p>
+            Patagonia is best from November through March (Southern Hemisphere summer). The Faroe Islands are most dramatic (and most dramatic weatherwise) from May to September. Kyoto's shoulder seasons — March-April and October-November — offer the best balance of weather and manageable crowds.
+          </p>
+
+          <h3>Budget Expectations</h3>
+          <ul>
+            <li><strong>Patagonia:</strong> Budget $120–200/day including accommodation, food, and park fees.</li>
+            <li><strong>Kyoto:</strong> Can be done on $80–120/day staying in ryokans and eating at local izakayas.</li>
+            <li><strong>Faroe Islands:</strong> Expect $150–250/day — it's not cheap, but it's not as expensive as Iceland.</li>
+          </ul>
+
+          <div class="dest-highlight">
+            <div class="dest-highlight-num">04</div>
+            <h4>Oaxaca, Mexico</h4>
+            <p>The culinary capital of Mexico with mezcal, mole negro, tlayudas, and one of the most vibrant artisan craft scenes anywhere in Latin America. Day of the Dead here is unlike anything else on earth.</p>
+          </div>
+
+          <div class="dest-highlight">
+            <div class="dest-highlight-num">05</div>
+            <h4>Namibia, Africa</h4>
+            <p>The world's oldest desert meets some of its most surreal landscapes: red dunes at Sossusvlei, the desolate Skeleton Coast, and the dark-sky stargazing that will make you reconsider your life choices.</p>
+          </div>
+
+          <p>
+            We could keep going — and honestly, the remaining five spots (Georgia, Raja Ampat, the Azores, Bhutan, and the Atacama Desert) each deserve their own dedicated article. Which they'll get. Subscribe to TripsyTravel and we'll bring each one to your inbox in full detail.
+          </p>
+
+          <img src="https://images.unsplash.com/photo-1539768942893-daf53e448371?w=900&q=80" alt="Maldives" />
+          <p class="image-caption">Crystal clear waters of the Maldives — a classic for good reason.</p>
+
+          <h2>Final Thoughts</h2>
+          <p>
+            The world is simultaneously smaller and larger than it's ever been. Smaller because you can get to almost anywhere within 24 hours. Larger because there are still corners so remote, so raw, so genuinely unlike anywhere else, that they feel like they belong to a different planet.
+          </p>
+          <p>
+            These ten destinations are not just bucket-list checkboxes. They are chapters in a story you'll tell for the rest of your life. Go. Don't wait for the perfect moment. The perfect moment is right now.
+          </p>
+
+        </div><!-- /post-content -->
+
+        <!-- Tags -->
+        <div class="post-tags">
+          <span class="post-tags-label">Tags:</span>
+          <a href="javascript:void(0)" class="tag">Destinations</a>
+          <a href="javascript:void(0)" class="tag">Patagonia</a>
+          <a href="javascript:void(0)" class="tag">Japan</a>
+          <a href="javascript:void(0)" class="tag">Adventure</a>
+          <a href="javascript:void(0)" class="tag">Bucket List</a>
+          <a href="javascript:void(0)" class="tag">2026 Travel</a>
+          <a href="javascript:void(0)" class="tag">Faroe Islands</a>
+        </div>
+
+        <!-- Share -->
+        <div class="post-share">
+          <span class="share-label">Share:</span>
+          <a href="javascript:void(0)" class="share-btn share-fb">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            Facebook
+          </a>
+          <a href="javascript:void(0)" class="share-btn share-tw">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+            Twitter
+          </a>
+          <a href="javascript:void(0)" class="share-btn share-pin">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+            Pinterest
+          </a>
+          <a href="javascript:void(0)" class="share-btn share-wa">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+
+        <!-- Author -->
+        <div class="author-box">
+          <img src="https://i.pravatar.cc/150?img=47" alt="TripsyTravel Editor" />
+          <div>
+            <div class="author-box-name">TripsyTravel Editorial</div>
+            <p>Our team of passionate globetrotters has collectively visited 87 countries. We write honest, first-hand travel content that helps you plan smarter, explore deeper, and experience more. Follow us on Instagram @TripsyTravel for daily inspiration.</p>
+          </div>
+        </div>
+
+      </article><!-- /post-body -->
+
+      <!-- SIDEBAR (reused from homepage) -->
+      <aside class="sidebar">
+
+        <div class="sidebar-widget newsletter-widget">
+          <div class="widget-header">
+            <div class="widget-title">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Join 18,000+ Travelers
+            </div>
+          </div>
+          <div class="widget-body">
+            <p style="font-size:13px;color:#6B7280;margin-bottom:14px;">Get the best travel guides &amp; deals weekly. No spam, ever.</p>
+            <input class="newsletter-input" type="text" placeholder="Your Name" />
+            <input class="newsletter-input" type="email" placeholder="Your Email Address" />
+            <button class="btn-newsletter">Subscribe Now ✈</button>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-header">
+            <div class="widget-title">Popular Posts</div>
+          </div>
+          <div class="widget-body">
+            <div class="pop-post">
+              <span class="pop-post-num">01</span>
+              <div>
+                <div class="pop-post-title"><a href="../blogs.html">Best Budget Airlines in Asia</a></div>
+                <div class="pop-post-meta">14,200 views</div>
+              </div>
+            </div>
+            <div class="pop-post">
+              <span class="pop-post-num">02</span>
+              <div>
+                <div class="pop-post-title"><a href="../blogs.html">Travel Insurance: What It Actually Covers</a></div>
+                <div class="pop-post-meta">11,800 views</div>
+              </div>
+            </div>
+            <div class="pop-post">
+              <span class="pop-post-num">03</span>
+              <div>
+                <div class="pop-post-title"><a href="../blogs.html">Packing Light for 3 Weeks</a></div>
+                <div class="pop-post-meta">9,400 views</div>
+              </div>
+            </div>
+            <div class="pop-post">
+              <span class="pop-post-num">04</span>
+              <div>
+                <div class="pop-post-title"><a href="../blogs.html">Digital Nomad Visas: 15 Countries</a></div>
+                <div class="pop-post-meta">8,700 views</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-header">
+            <div class="widget-title">Categories</div>
+          </div>
+          <div class="widget-body">
+            <div class="cat-item"><a href="../blogs.html"><span class="cat-dot"></span>Places &amp; Destinations</a><span class="cat-count">42</span></div>
+            <div class="cat-item"><a href="../blogs.html"><span class="cat-dot" style="background:#25A18E"></span>Food &amp; Culture</a><span class="cat-count">28</span></div>
+            <div class="cat-item"><a href="../blogs.html"><span class="cat-dot" style="background:#004E64"></span>Travel Stories</a><span class="cat-count">35</span></div>
+            <div class="cat-item"><a href="../blogs.html"><span class="cat-dot" style="background:#7C3AED"></span>Tips &amp; Tricks</a><span class="cat-count">51</span></div>
+            <div class="cat-item"><a href="../blogs.html"><span class="cat-dot" style="background:#F5A623"></span>Road Trips</a><span class="cat-count">19</span></div>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-header">
+            <div class="widget-title">Popular Tags</div>
+          </div>
+          <div class="widget-body">
+            <div class="tags-list">
+              <a href="javascript:void(0)" class="tag">Backpacking</a>
+              <a href="javascript:void(0)" class="tag">Asia</a>
+              <a href="javascript:void(0)" class="tag">Europe</a>
+              <a href="javascript:void(0)" class="tag">Budget Travel</a>
+              <a href="javascript:void(0)" class="tag">Solo Travel</a>
+              <a href="javascript:void(0)" class="tag">Beaches</a>
+              <a href="javascript:void(0)" class="tag">Mountains</a>
+              <a href="javascript:void(0)" class="tag">Street Food</a>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+    </div><!-- /post-grid -->
+
+    <!-- Related Posts -->
+    <div class="related-posts">
+      <div class="section-header">
+        <h2 class="section-title">You Might Also Like</h2>
+        <a href="../index.html" class="see-all">Back to Homepage ›</a>
+      </div>
+      <div class="cards-grid-3">
+        <article class="card">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=600&q=75" alt="Bali" loading="lazy" />
+            <span class="card-category">Places</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title"><a href="javascript:void(0)">The Ultimate Guide to Bali: Beyond the Tourist Trail</a></h3>
+            <p class="card-excerpt">Skip the crowds and discover Bali's secret waterfalls, village ceremonies, and rice paddies.</p>
+            <div class="card-meta"><span style="font-size:12px;color:#6B7280;">By Sarah Lin · Oct 2026</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&q=75" alt="Europe" loading="lazy" />
+            <span class="card-category cat-tips">Tips</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title"><a href="javascript:void(0)">How to Plan a Month-Long Europe Trip on a Shoestring Budget</a></h3>
+            <p class="card-excerpt">Eurail passes, hostel hacks, free museum days — 14 countries in 30 days for under $2,000.</p>
+            <div class="card-meta"><span style="font-size:12px;color:#6B7280;">By Raj Mehta · Oct 2026</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=75" alt="Hiking" loading="lazy" />
+            <span class="card-category" style="background:#EC4899;">Adventure</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title"><a href="javascript:void(0)">How to Plan Your First Multi-Day Trek Without Losing Your Mind</a></h3>
+            <p class="card-excerpt">Gear lists, training schedules, packing hacks, and mental prep — everything before you hit the trail.</p>
+            <div class="card-meta"><span style="font-size:12px;color:#6B7280;">By TripsyTravel · Oct 2026</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </div><!-- /container -->
+</div><!-- /post-layout -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo" style="margin-bottom:14px;display:inline-flex;">
+          <svg class="logo-icon" viewBox="0 0 46 46" fill="none">
+            <circle cx="23" cy="23" r="23" fill="#E8440A"/>
+            <path d="M10 23 L38 14 L32 23 L38 32 Z" fill="white" opacity="0.95"/>
+            <circle cx="27" cy="21" r="2" fill="#E8440A"/>
+            <path d="M10 23 L20 26 L18 31 Z" fill="white" opacity="0.7"/>
+            <circle cx="8" cy="14" r="1.2" fill="#FFD166"/>
+          </svg>
+          <div class="logo-text">
+            <div class="logo-name"><span>Tripsy</span><span>Travel</span></div>
+            <div class="logo-tagline">Wander More, Worry Less</div>
+          </div>
+        </a>
+        <p class="footer-desc">TripsyTravel is your passport to inspiration. We share honest, first-hand travel stories, practical guides, and cultural discoveries from every corner of the globe.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../contact.html">Write for Us</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Categories</div>
+        <ul class="footer-links">
+          <li><a href="../blogs.html">Places &amp; Destinations</a></li>
+          <li><a href="../blogs.html">Food &amp; Culture</a></li>
+          <li><a href="../blogs.html">Travel Stories</a></li>
+          <li><a href="../blogs.html">Tips &amp; Tricks</a></li>
+          <li><a href="../blogs.html">Road Trips</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Our Gallery</div>
+        <div class="footer-gallery">
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=150&q=65" alt="gallery" loading="lazy"/></div>
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=150&q=65" alt="gallery" loading="lazy"/></div>
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=150&q=65" alt="gallery" loading="lazy"/></div>
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?w=150&q=65" alt="gallery" loading="lazy"/></div>
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=150&q=65" alt="gallery" loading="lazy"/></div>
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=150&q=65" alt="gallery" loading="lazy"/></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TripsyTravel · tripsytravel.info · All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scrollTop');
+    if (window.scrollY > 400) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+</script>
+
+</body>
+</html>

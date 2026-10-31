@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="220" height="60">
+  <!-- Icon background -->
+  <circle cx="30" cy="30" r="26" fill="#E8440A"/>
+
+  <!-- Plane body -->
+  <polygon points="8,30 38,20 33,30 38,40" fill="white" opacity="0.95"/>
+
+  <!-- Plane window -->
+  <circle cx="28" cy="27" r="2.2" fill="#E8440A"/>
+
+  <!-- Plane tail -->
+  <polygon points="8,30 19,34 17,39" fill="white" opacity="0.7"/>
+
+  <!-- Globe arc -->
+  <path d="M13,43 Q30,37 47,43" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- Stars -->
+  <circle cx="7" cy="13" r="1.5" fill="#FFD166"/>
+  <circle cx="52" cy="44" r="1.1" fill="#FFD166"/>
+  <circle cx="4" cy="40" r="0.8" fill="#FFD166"/>
+
+  <!-- "Tipsy" in coral -->
+  <text x="66" y="35"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="24"
+    font-weight="800"
+    fill="#E8440A"
+    letter-spacing="-0.5">Tipsy</text>
+
+  <!-- "Travel" in navy -->
+  <text x="124" y="35"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="24"
+    font-weight="800"
+    fill="#004E64"
+    letter-spacing="-0.5">Travel</text>
+
+  <!-- Tagline -->
+  <text x="67" y="49"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="7.5"
+    font-weight="600"
+    fill="#6B7280"
+    letter-spacing="2.2">WANDER MORE, WORRY LESS</text>
+</svg>

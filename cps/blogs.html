@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="impact-site-verification" value="3d35c4e1-7d13-41ac-bc4b-34d6ef9084db" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Blogs – TripsyTravel</title>
+  <meta name="description" content="Explore all travel blogs on TripsyTravel — destinations, food, stories, tips and more from around the world." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.tripsytravel.info/blogs.html" />
+  <meta property="og:title" content="All Blogs – TripsyTravel" />
+  <meta property="og:description" content="Explore all travel blogs on TripsyTravel — destinations, food, stories, tips and more from around the world." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="All Blogs – TripsyTravel" />
+  <meta name="twitter:description" content="Explore all travel blogs on TripsyTravel — destinations, food, stories, tips and more from around the world." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+  <style>
+    /* ── BLOG ARCHIVE SPECIFIC ── */
+    .archive-hero {
+      background: linear-gradient(135deg, var(--secondary) 0%, #002D3D 100%);
+      padding: 60px 0;
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .archive-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=50') center/cover;
+      opacity: 0.12;
+    }
+    .archive-hero-inner { position: relative; z-index: 1; }
+    .archive-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 46px; font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .archive-hero p { font-size: 17px; color: rgba(255,255,255,0.8); max-width: 520px; margin: 0 auto 28px; }
+
+    /* Filter bar */
+    .filter-bar {
+      background: var(--white);
+      border-bottom: 2px solid var(--bg-alt);
+      padding: 0;
+      position: sticky; top: 72px; z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .filter-inner {
+      display: flex; align-items: center; gap: 0;
+      overflow-x: auto;
+    }
+    .filter-btn {
+      padding: 16px 22px;
+      font-size: 13px; font-weight: 600;
+      color: var(--gray);
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: all var(--transition);
+      cursor: pointer;
+      background: none; border-top: none; border-left: none; border-right: none;
+      font-family: inherit;
+    }
+    .filter-btn:hover { color: var(--primary); }
+    .filter-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+    /* Archive layout */
+    .archive-layout { padding: 48px 0; }
+    .archive-grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 36px;
+    }
+
+    /* Featured post (top) */
+    .featured-archive-card {
+      display: flex; gap: 0;
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 28px;
+      transition: all var(--transition);
+    }
+    .featured-archive-card:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); }
+    .featured-archive-img {
+      width: 50%; height: 320px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .featured-archive-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .featured-archive-card:hover .featured-archive-img img { transform: scale(1.05); }
+    .featured-archive-body {
+      flex: 1; padding: 32px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .featured-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--dark);
+      font-size: 10px; font-weight: 800;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .featured-archive-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px; font-weight: 800;
+      line-height: 1.3; color: var(--dark);
+      margin-bottom: 12px;
+      transition: color var(--transition);
+    }
+    .featured-archive-card:hover .featured-archive-title { color: var(--primary); }
+    .featured-archive-excerpt {
+      font-size: 14px; color: var(--gray);
+      line-height: 1.7; margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .featured-archive-meta {
+      display: flex; gap: 16px; font-size: 12.5px; color: var(--gray);
+      padding-top: 16px; border-top: 1px solid var(--bg-alt);
+    }
+    .read-more-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--primary); color: var(--white);
+      padding: 10px 20px; border-radius: 20px;
+      font-size: 13px; font-weight: 600;
+      transition: all var(--transition);
+      margin-top: 16px; align-self: flex-start;
+    }
+    .read-more-btn:hover { background: var(--primary-light); transform: translateY(-1px); }
+
+    /* Blog list cards */
+    .blog-list { display: flex; flex-direction: column; gap: 20px; }
+    .blog-list-card {
+      display: flex; gap: 18px;
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: all var(--transition);
+    }
+    .blog-list-card:hover { transform: translateY(-3px); box-shadow: var(--card-shadow-hover); }
+    .blog-list-img {
+      width: 200px; height: 150px;
+      flex-shrink: 0; overflow: hidden;
+    }
+    .blog-list-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .blog-list-card:hover .blog-list-img img { transform: scale(1.06); }
+    .blog-list-body {
+      flex: 1; padding: 18px 18px 18px 0;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .blog-list-cat {
+      font-size: 10.5px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--primary); margin-bottom: 7px;
+    }
+    .blog-list-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px; font-weight: 700;
+      line-height: 1.35; color: var(--dark);
+      margin-bottom: 8px;
+      transition: color var(--transition);
+    }
+    .blog-list-card:hover .blog-list-title { color: var(--primary); }
+    .blog-list-excerpt {
+      font-size: 13.5px; color: var(--gray);
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .blog-list-meta {
+      display: flex; gap: 14px; font-size: 12px; color: var(--gray);
+      align-items: center; flex-wrap: wrap;
+    }
+    .blog-list-author { display: flex; align-items: center; gap: 6px; }
+    .blog-list-author img {
+      width: 22px; height: 22px;
+      border-radius: 50%; object-fit: cover;
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex; gap: 6px; justify-content: center;
+      margin-top: 40px;
+    }
+    .page-btn {
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 8px;
+      font-size: 14px; font-weight: 600;
+      background: var(--white);
+      color: var(--gray);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: all var(--transition);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .page-btn:hover, .page-btn.active {
+      background: var(--primary);
+      color: var(--white);
+    }
+    .page-btn.wide { width: auto; padding: 0 16px; }
+
+    @media (max-width: 768px) {
+      .featured-archive-card { flex-direction: column; }
+      .featured-archive-img { width: 100%; height: 220px; }
+      .archive-grid-layout { grid-template-columns: 1fr; }
+      .blog-list-img { width: 120px; height: 100px; }
+      .archive-hero h1 { font-size: 30px; }
+      .filter-bar { top: 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <a href="contact.html">FAQ</a>
+      <a href="about.html">Our Team</a>
+      <a href="javascript:void(0)">Gallery</a>
+      <a href="javascript:void(0)">Contact Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 46 46" fill="none">
+          <circle cx="23" cy="23" r="23" fill="#E8440A"/>
+          <path d="M10 23 L38 14 L32 23 L38 32 Z" fill="white" opacity="0.95"/>
+          <circle cx="27" cy="21" r="2" fill="#E8440A"/>
+          <path d="M10 23 L20 26 L18 31 Z" fill="white" opacity="0.7"/>
+          <path d="M14 35 Q23 30 32 35" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+          <circle cx="8" cy="14" r="1.2" fill="#FFD166"/>
+        </svg>
+        <div class="logo-text">
+          <div class="logo-name"><span>Tripsy</span><span>Travel</span></div>
+          <div class="logo-tagline">Wander More, Worry Less</div>
+        </div>
+      </a>
+      <nav>
+        <ul id="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blogs.html">Places</a></li>
+          <li><a href="blogs.html">Food &amp; Culture</a></li>
+          <li><a href="blogs.html">Stories</a></li>
+          <li class="active"><a href="blogs.html">Blogs</a></li>
+          <li class="nav-cta"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" onclick="document.getElementById('nav-list').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ARCHIVE HERO -->
+<section class="archive-hero">
+  <div class="container archive-hero-inner">
+    <h1>All Travel Blogs</h1>
+    <p>Real stories, honest guides, and practical advice from travelers who've actually been there.</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+      <span style="background:rgba(255,255,255,0.15);color:white;padding:6px 16px;border-radius:20px;font-size:13px;">✈ 10 Articles</span>
+      <span style="background:rgba(255,255,255,0.15);color:white;padding:6px 16px;border-radius:20px;font-size:13px;">🌍 8 Destinations</span>
+      <span style="background:rgba(255,255,255,0.15);color:white;padding:6px 16px;border-radius:20px;font-size:13px;">📖 6 Categories</span>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-inner">
+      <button class="filter-btn active">All Posts</button>
+      <button class="filter-btn">Places</button>
+      <button class="filter-btn">Food &amp; Culture</button>
+      <button class="filter-btn">Stories</button>
+      <button class="filter-btn">Tips &amp; Tricks</button>
+      <button class="filter-btn">Adventure</button>
+      <button class="filter-btn">Road Trips</button>
+    </div>
+  </div>
+</div>
+
+<!-- ARCHIVE CONTENT -->
+<div class="archive-layout">
+  <div class="container">
+    <div class="archive-grid-layout">
+
+      <!-- MAIN POSTS COLUMN -->
+      <div>
+
+        <!-- Featured Post -->
+        <a href="blog/10-breathtaking-destinations.html" class="featured-archive-card" data-category="places">
+          <div class="featured-archive-img">
+            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80" alt="Breathtaking Destinations" loading="lazy" />
+          </div>
+          <div class="featured-archive-body">
+            <span class="featured-badge">⭐ Editor's Pick</span>
+            <div class="card-category" style="position:static;display:inline-block;margin-bottom:10px;">Places</div>
+            <h2 class="featured-archive-title">10 Breathtaking Destinations You Must Visit Before 2026</h2>
+            <p class="featured-archive-excerpt">From the misty peaks of Patagonia to the neon-lit lanes of Tokyo — these are the journeys that will redefine adventure. We've spent three years chasing these experiences so you don't have to guess.</p>
+            <div class="featured-archive-meta">
+              <span>By TripsyTravel</span>
+              <span>Oct 22, 2026</span>
+              <span>12 min read</span>
+              <span>18 comments</span>
+            </div>
+            <span class="read-more-btn">Read Full Story ›</span>
+          </div>
+        </a>
+
+        <!-- Blog Post List -->
+        <div class="blog-list">
+
+          <a href="blog/bali-ultimate-guide.html" class="blog-list-card" data-category="places">
+            <div class="blog-list-img">
+              <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=400&q=75" alt="Bali" loading="lazy" />
+            </div>
+            <div class="blog-list-body">
+              <div class="blog-list-cat">Places &amp; Destinations</div>
+              <h3 class="blog-list-title">The Ultimate Guide to Bali: Beyond the Tourist Trail</h3>
+              <p class="blog-list-excerpt">Skip the crowds and discover Bali's secret waterfalls, village ceremonies, and rice paddies that still feel untouched by time.</p>
+              <div class="blog-list-meta">
+                <div class="blog-list-author">
+                  <img src="https://i.pravatar.cc/50?img=11" alt="Sarah Lin" />
+                  <span>Sarah Lin</span>
+                </div>
+                <span>Oct 18, 2026</span>
+                <span>9 min read</span>
+                <span>12 comments</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog/europe-budget-trip.html" class="blog-list-card" data-category="tips">
+            <div class="blog-list-img">
+              <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&q=75" alt="Europe" loading="lazy" />
+            </div>
+            <div class="blog-list-body">
+              <div class="blog-list-cat" style="color:#7C3AED;">Tips &amp; Tricks</div>
+              <h3 class="blog-list-title">How to Plan a Month-Long Europe Trip on a Shoestring Budget</h3>
+              <p class="blog-list-excerpt">Eurail passes, hostel hacks, free museum days — here's exactly how we did 14 countries in 30 days for under $2,000.</p>
+              <div class="blog-list-meta">
+                <div class="blog-list-author">
+                  <img src="https://i.pravatar.cc/50?img=5" alt="Raj Mehta" />
+                  <span>Raj Mehta</span>
+                </div>
+                <span>Oct 14, 2026</span>
+                <span>11 min read</span>
+                <span>27 comments</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog/bangkok-street-food.html" class="blog-list-card" data-category="food">
+            <div class="blog-list-img">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=75" alt="Bangkok Street Food" loading="lazy" />
+            </div>
+            <div class="blog-list-body">
+              <div class="blog-list-cat" style="color:#25A18E;">Food &amp; Culture</div>
+              <h3 class="blog-list-title">Street Food Safari: 8 Dishes That Define Bangkok</h3>
+              <p class="blog-list-excerpt">From pad kra pao at midnight to the legendary mango sticky rice — Bangkok's streets are a culinary universe waiting to be devoured.</p>
+              <div class="blog-list-meta">
+                <div class="blog-list-author">
+                  <img src="https://i.pravatar.cc/50?img=29" alt="Emma Torres" />
+                  <span>Emma Torres</span>
+                </div>
+                <span>Oct 10, 2026</span>
+                <span>8 min read</span>
+                <span>9 comments</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog/patagonia-solo-diary.html" class="blog-list-card" data-category="stories">
+            <div class="blog-list-img">
+              <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=400&q=75" alt="Patagonia" loading="lazy" />
+            </div>
+            <div class="blog-list-body">
+              <div class="blog-list-cat" style="color:#004E64;">Travel Stories</div>
+              <h3 class="blog-list-title">Patagonia at the End of the World: A Solo Hiker's Diary</h3>
+              <p class="blog-list-excerpt">Torres del Paine in every season looks different. I camped through all four in 28 days and came back a changed person.</p>
+              <div class="blog-list-meta">
+                <div class="blog-list-author">
+                  <img src="https://i.pravatar.cc/50?img=33" alt="Marco Diaz" />
+                  <span>Marco Diaz</span>
+                </div>
+                <span>Oct 5, 2026</span>
+                <span>13 min read</span>
+                <span>31 comments</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog/singapore-48-hours.html" class="blog-list-card" data-category="places">
+            <div class="blog-list-img">
+              <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400&q=75" alt="Singapore" loading="lazy" />
+            </div>
+            <div class="blog-list-body">
+              <div class="blog-list-cat">Places &amp; Destinations</div>
+              <h3 class="blog-list-title">48 Hours in Singapore: The Perfect Layover Guide</h3>
+              <p class="blog-list-excerpt">Gardens by the Bay, Maxwell hawker centre, and the Haji Lane street art scene — Singapore in 48 hours, done right.</p>
+              <div class="blog-list-meta">
+                <div class="blog-list-author">
+                  <img src="https://i.pravatar.cc/50?img=47" alt="TripsyTravel" />
+                  <span>TripsyTravel</span>
+                </div>
+                <span>Sep 28, 2026</span>
+                <span>7 min read</span>
+                <span>5 comments</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog/multi-day-trek-guide.html" class="blog-list-card" data-category="adventure">
+            <div class="blog-list-img">
+              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=75" alt="Hiking Trek" loading="lazy" />
+            </div>
+            <div class="blog-list-body">
+              <div class="blog-list-cat" style="color:#EC4899;">Adventure</div>
+              <h3 class="blog-list-title">How to Plan Your First Multi-Day Trek Without Losing Your Mind</h3>
+              <p class="blog-list-excerpt">Gear lists, training schedules, packing hacks, and mental preparation — everything you need before you hit the trail for days at a time.</p>
+              <div class="blog-list-meta">
+                <div class="blog-list-author">
+                  <img src="https://i.pravatar.cc/50?img=47" alt="TripsyTravel" />
+                  <span>TripsyTravel</span>
+                </div>
+                <span>Sep 22, 2026</span>
+                <span>10 min read</span>
+                <span>3 comments</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog/flight-booking-guide.html" class="blog-list-card" data-category="tips">
+            <div class="blog-list-img">
+              <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&q=75" alt="Flight" loading="lazy" />
+            </div>
+            <div class="blog-list-body">
+              <div class="blog-list-cat" style="color:#7C3AED;">Tips &amp; Tricks</div>
+              <h3 class="blog-list-title">The Ultimate Flight Booking Guide: When to Buy for Cheapest Fares</h3>
+              <p class="blog-list-excerpt">Airlines don't want you to know these tricks. We spent 3 years tracking fare data and here's the definitive answer on when to book.</p>
+              <div class="blog-list-meta">
+                <div class="blog-list-author">
+                  <img src="https://i.pravatar.cc/50?img=5" alt="Raj Mehta" />
+                  <span>Raj Mehta</span>
+                </div>
+                <span>Sep 15, 2026</span>
+                <span>9 min read</span>
+                <span>21 comments</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog/marrakech-medina.html" class="blog-list-card" data-category="food">
+            <div class="blog-list-img">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=75" alt="Marrakech" loading="lazy" />
+            </div>
+            <div class="blog-list-body">
+              <div class="blog-list-cat" style="color:#25A18E;">Food &amp; Culture</div>
+              <h3 class="blog-list-title">Marrakech Medina: Getting Deliciously Lost in the Souk</h3>
+              <p class="blog-list-excerpt">The sensory overload of Jemaa el-Fna at dusk, the spice souk, the leather tanneries, and the best tagine you'll ever eat.</p>
+              <div class="blog-list-meta">
+                <div class="blog-list-author">
+                  <img src="https://i.pravatar.cc/50?img=29" alt="Emma Torres" />
+                  <span>Emma Torres</span>
+                </div>
+                <span>Sep 8, 2026</span>
+                <span>10 min read</span>
+                <span>14 comments</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog/kyoto-cherry-blossom.html" class="blog-list-card" data-category="places">
+            <div class="blog-list-img">
+              <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=400&q=75" alt="Kyoto Cherry Blossom" loading="lazy" />
+            </div>
+            <div class="blog-list-body">
+              <div class="blog-list-cat">Places &amp; Destinations</div>
+              <h3 class="blog-list-title">Cherry Blossom Season in Kyoto: Planning Your Perfect Hanami</h3>
+              <p class="blog-list-excerpt">Predicting bloom dates, the best spots, how to beat the crowds, and exactly what to bring to a traditional hanami picnic.</p>
+              <div class="blog-list-meta">
+                <div class="blog-list-author">
+                  <img src="https://i.pravatar.cc/50?img=11" alt="Sarah Lin" />
+                  <span>Sarah Lin</span>
+                </div>
+                <span>Sep 1, 2026</span>
+                <span>8 min read</span>
+                <span>7 comments</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog/go-city-pass-review.html" class="blog-list-card" data-category="tips">
+            <div class="blog-list-img">
+              <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=400&q=75" alt="Go City Pass" loading="lazy" />
+            </div>
+            <div class="blog-list-body">
+              <div class="blog-list-cat" style="color:#7C3AED;">Tips &amp; Tricks</div>
+              <h3 class="blog-list-title">Is the Go City Pass Worth It? An Honest Review for Smart Travelers</h3>
+              <p class="blog-list-excerpt">Go City passes promise savings of up to 50% on city attractions. We ran the numbers across New York, London, Dubai, Sydney and Barcelona to tell you the truth.</p>
+              <div class="blog-list-meta">
+                <div class="blog-list-author">
+                  <img src="https://i.pravatar.cc/50?img=8" alt="James Hartley" />
+                  <span>James Hartley</span>
+                </div>
+                <span>Oct 22, 2026</span>
+                <span>8 min read</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog/expedia-booking-tips.html" class="blog-list-card" data-category="tips">
+            <div class="blog-list-img">
+              <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=75" alt="Expedia booking" loading="lazy" />
+            </div>
+            <div class="blog-list-body">
+              <div class="blog-list-cat" style="color:#7C3AED;">Tips &amp; Tricks</div>
+              <h3 class="blog-list-title">How to Get the Best Deals on Expedia: Insider Tips That Actually Work</h3>
+              <p class="blog-list-excerpt">Bundles, bank offers, flexible dates, free cancellation hacks — most travellers use Expedia wrong. Here's how to use it right.</p>
+              <div class="blog-list-meta">
+                <div class="blog-list-author">
+                  <img src="https://i.pravatar.cc/50?img=5" alt="Emma Torres" />
+                  <span>Emma Torres</span>
+                </div>
+                <span>Oct 24, 2026</span>
+                <span>7 min read</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog/viator-tours-guide.html" class="blog-list-card" data-category="tips">
+            <div class="blog-list-img">
+              <img src="https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?w=400&q=75" alt="Viator tours" loading="lazy" />
+            </div>
+            <div class="blog-list-body">
+              <div class="blog-list-cat" style="color:#7C3AED;">Tips &amp; Tricks</div>
+              <h3 class="blog-list-title">Why Viator Is the Best Way to Book Tours &amp; Experiences — Plus Our Top Picks</h3>
+              <p class="blog-list-excerpt">Over 300,000 tours worldwide. Here's how to filter the noise and find the genuinely outstanding small-group experiences in Rome, Tokyo, Cairo and beyond.</p>
+              <div class="blog-list-meta">
+                <div class="blog-list-author">
+                  <img src="https://i.pravatar.cc/50?img=11" alt="Sarah Lin" />
+                  <span>Sarah Lin</span>
+                </div>
+                <span>Oct 25, 2026</span>
+                <span>9 min read</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog/haven-holidays-review.html" class="blog-list-card" data-category="stories">
+            <div class="blog-list-img">
+              <img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=400&q=75" alt="Haven Holidays UK" loading="lazy" />
+            </div>
+            <div class="blog-list-body">
+              <div class="blog-list-cat" style="color:#004E64;">Travel Stories</div>
+              <h3 class="blog-list-title">Haven Holiday Parks UK: Everything You Need to Know Before You Book</h3>
+              <p class="blog-list-excerpt">40+ parks from Cornwall to Scotland. We rank the best, expose the worst, and tell you exactly when and how to save on a UK family break.</p>
+              <div class="blog-list-meta">
+                <div class="blog-list-author">
+                  <img src="https://i.pravatar.cc/50?img=8" alt="James Hartley" />
+                  <span>James Hartley</span>
+                </div>
+                <span>Oct 26, 2026</span>
+                <span>8 min read</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog/makemytrip-guide.html" class="blog-list-card" data-category="tips">
+            <div class="blog-list-img">
+              <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=400&q=75" alt="MakeMyTrip India" loading="lazy" />
+            </div>
+            <div class="blog-list-body">
+              <div class="blog-list-cat" style="color:#7C3AED;">Tips &amp; Tricks</div>
+              <h3 class="blog-list-title">MakeMyTrip Explained: How to Book Flights, Hotels &amp; Holidays in India Like a Pro</h3>
+              <p class="blog-list-excerpt">Bank card offers, flexible date calendars, Tonight's Deals, and package hacks — everything you need to save big on India's leading travel platform.</p>
+              <div class="blog-list-meta">
+                <div class="blog-list-author">
+                  <img src="https://i.pravatar.cc/50?img=12" alt="Arjun Sharma" />
+                  <span>Arjun Sharma</span>
+                </div>
+                <span>Oct 27, 2026</span>
+                <span>9 min read</span>
+              </div>
+            </div>
+          </a>
+
+        </div><!-- /blog-list -->
+
+        <!-- Pagination -->
+
+      </div><!-- /main col -->
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+
+        <div class="sidebar-widget newsletter-widget">
+          <div class="widget-header">
+            <div class="widget-title">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Join 18,000+ Travelers
+            </div>
+          </div>
+          <div class="widget-body">
+            <p style="font-size:13px;color:#6B7280;margin-bottom:14px;">Get the best travel guides &amp; deals weekly. No spam, ever.</p>
+            <input class="newsletter-input" type="text" placeholder="Your Name" />
+            <input class="newsletter-input" type="email" placeholder="Your Email Address" />
+            <button class="btn-newsletter">Subscribe Now ✈</button>
+            <p class="newsletter-note">🔒 Unsubscribe anytime.</p>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-header">
+            <div class="widget-title">Popular Posts</div>
+          </div>
+          <div class="widget-body">
+            <div class="pop-post">
+              <span class="pop-post-num">01</span>
+              <div>
+                <div class="pop-post-title"><a href="blog/flight-booking-guide.html">Best Budget Airlines in Asia</a></div>
+                <div class="pop-post-meta">14,200 views</div>
+              </div>
+            </div>
+            <div class="pop-post">
+              <span class="pop-post-num">02</span>
+              <div>
+                <div class="pop-post-title"><a href="blog/europe-budget-trip.html">Europe Trip on a Shoestring</a></div>
+                <div class="pop-post-meta">11,800 views</div>
+              </div>
+            </div>
+            <div class="pop-post">
+              <span class="pop-post-num">03</span>
+              <div>
+                <div class="pop-post-title"><a href="blog/multi-day-trek-guide.html">Packing Light for 3 Weeks</a></div>
+                <div class="pop-post-meta">9,400 views</div>
+              </div>
+            </div>
+            <div class="pop-post">
+              <span class="pop-post-num">04</span>
+              <div>
+                <div class="pop-post-title"><a href="blog/patagonia-solo-diary.html">Patagonia Solo Hiker's Diary</a></div>
+                <div class="pop-post-meta">8,700 views</div>
+              </div>
+            </div>
+            <div class="pop-post">
+              <span class="pop-post-num">05</span>
+              <div>
+                <div class="pop-post-title"><a href="blog/10-breathtaking-destinations.html">10 Breathtaking Destinations</a></div>
+                <div class="pop-post-meta">7,200 views</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-header">
+            <div class="widget-title">Browse Categories</div>
+          </div>
+          <div class="widget-body">
+            <div class="cat-item"><a href="blogs.html"><span class="cat-dot"></span>Places &amp; Destinations</a><span class="cat-count">4</span></div>
+            <div class="cat-item"><a href="blogs.html"><span class="cat-dot" style="background:#25A18E"></span>Food &amp; Culture</a><span class="cat-count">2</span></div>
+            <div class="cat-item"><a href="blogs.html"><span class="cat-dot" style="background:#004E64"></span>Travel Stories</a><span class="cat-count">1</span></div>
+            <div class="cat-item"><a href="blogs.html"><span class="cat-dot" style="background:#7C3AED"></span>Tips &amp; Tricks</a><span class="cat-count">2</span></div>
+            <div class="cat-item"><a href="blogs.html"><span class="cat-dot" style="background:#EC4899"></span>Adventure</a><span class="cat-count">1</span></div>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-header">
+            <div class="widget-title">Popular Tags</div>
+          </div>
+          <div class="widget-body">
+            <div class="tags-list">
+              <a href="javascript:void(0)" class="tag">Backpacking</a>
+              <a href="javascript:void(0)" class="tag">Asia</a>
+              <a href="javascript:void(0)" class="tag">Europe</a>
+              <a href="javascript:void(0)" class="tag">Budget Travel</a>
+              <a href="javascript:void(0)" class="tag">Solo Travel</a>
+              <a href="javascript:void(0)" class="tag">Beaches</a>
+              <a href="javascript:void(0)" class="tag">Street Food</a>
+              <a href="javascript:void(0)" class="tag">City Breaks</a>
+              <a href="javascript:void(0)" class="tag">Photography</a>
+              <a href="javascript:void(0)" class="tag">Road Trip</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-header">
+            <div class="widget-title">Instagram Gallery</div>
+          </div>
+          <div class="widget-body" style="padding:12px;">
+            <div class="gallery-grid">
+              <div class="gallery-item"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&q=70" alt="beach" loading="lazy"/></div>
+              <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=200&q=70" alt="italy" loading="lazy"/></div>
+              <div class="gallery-item"><img src="https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=200&q=70" alt="japan" loading="lazy"/></div>
+              <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=200&q=70" alt="ocean" loading="lazy"/></div>
+              <div class="gallery-item"><img src="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?w=200&q=70" alt="mountains" loading="lazy"/></div>
+              <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=200&q=70" alt="city" loading="lazy"/></div>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+    </div><!-- /archive-grid-layout -->
+  </div><!-- /container -->
+</div><!-- /archive-layout -->
+
+<!-- NEWSLETTER SECTION -->
+<section class="newsletter-section">
+  <div class="container">
+    <h2>Never Miss a Travel Story</h2>
+    <p>Join over 18,000 curious wanderers who get the best travel guides, tips &amp; deals every week.</p>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" placeholder="Enter your email address…" />
+      <button type="submit">Subscribe Free ✈</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="margin-bottom:14px;display:inline-flex;">
+          <svg class="logo-icon" viewBox="0 0 46 46" fill="none">
+            <circle cx="23" cy="23" r="23" fill="#E8440A"/>
+            <path d="M10 23 L38 14 L32 23 L38 32 Z" fill="white" opacity="0.95"/>
+            <circle cx="27" cy="21" r="2" fill="#E8440A"/>
+            <path d="M10 23 L20 26 L18 31 Z" fill="white" opacity="0.7"/>
+            <circle cx="8" cy="14" r="1.2" fill="#FFD166"/>
+          </svg>
+          <div class="logo-text">
+            <div class="logo-name"><span>Tripsy</span><span>Travel</span></div>
+            <div class="logo-tagline">Wander More, Worry Less</div>
+          </div>
+        </a>
+        <p class="footer-desc">TripsyTravel is your passport to inspiration. We share honest, first-hand travel stories, practical guides, and cultural discoveries from every corner of the globe.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blogs.html">All Blogs</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Write for Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Categories</div>
+        <ul class="footer-links">
+          <li><a href="blogs.html">Places &amp; Destinations</a></li>
+          <li><a href="blogs.html">Food &amp; Culture</a></li>
+          <li><a href="blogs.html">Travel Stories</a></li>
+          <li><a href="blogs.html">Tips &amp; Tricks</a></li>
+          <li><a href="blogs.html">Adventure</a></li>
+          <li><a href="blogs.html">Road Trips</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Our Gallery</div>
+        <div class="footer-gallery">
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=150&q=65" alt="gallery" loading="lazy"/></div>
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=150&q=65" alt="gallery" loading="lazy"/></div>
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=150&q=65" alt="gallery" loading="lazy"/></div>
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?w=150&q=65" alt="gallery" loading="lazy"/></div>
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=150&q=65" alt="gallery" loading="lazy"/></div>
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=150&q=65" alt="gallery" loading="lazy"/></div>
+        </div>
+        <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:12px;"><em>Affiliate Disclosure: We may earn a small commission on bookings at no extra cost to you.</em></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TripsyTravel · tripsytravel.info · All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</div>
+
+<script>
+  // Filter buttons
+  const categoryMap = {
+    'all posts': 'all',
+    'places': 'places',
+    'food & culture': 'food',
+    'stories': 'stories',
+    'tips & tricks': 'tips',
+    'adventure': 'adventure',
+    'road trips': 'road-trips'
+  };
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      const cat = categoryMap[this.textContent.trim().toLowerCase()] || 'all';
+      const cards = document.querySelectorAll('.blog-list-card, .featured-archive-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Scroll to top
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scrollTop');
+    if (window.scrollY > 400) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+</script>
+
+</body>
+</html>

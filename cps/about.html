@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="impact-site-verification" value="3d35c4e1-7d13-41ac-bc4b-34d6ef9084db" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – TripsyTravel</title>
+  <meta name="description" content="TripsyTravel is a travel blog dedicated to honest, practical travel guides and stories from around the world." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.tripsytravel.info/about.html" />
+  <meta property="og:title" content="About Us – TripsyTravel" />
+  <meta property="og:description" content="TripsyTravel — honest travel guides and real stories from real travelers." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Us – TripsyTravel" />
+  <meta name="twitter:description" content="TripsyTravel — honest travel guides and real stories from real travelers." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+  <style>
+    .about-hero { position:relative; height:480px; overflow:hidden; background:var(--secondary); }
+    .about-hero img { width:100%; height:100%; object-fit:cover; opacity:0.3; }
+    .about-hero-overlay { position:absolute; inset:0; display:flex; align-items:center; background:linear-gradient(to right,rgba(0,30,50,.92) 55%,transparent 100%); }
+    .about-hero-content { color:white; max-width:600px; }
+    .about-badge { display:inline-block; background:var(--primary); color:white; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:5px 14px; border-radius:20px; margin-bottom:18px; }
+    .about-hero-content h1 { font-family:'Playfair Display',serif; font-size:48px; font-weight:800; line-height:1.15; margin-bottom:16px; }
+    .about-hero-content p { font-size:17px; color:rgba(255,255,255,.8); line-height:1.75; max-width:520px; }
+
+    .breadcrumb { background:var(--bg-alt); padding:12px 0; font-size:13px; color:var(--gray); border-bottom:1px solid var(--light-gray); }
+    .breadcrumb .container { display:flex; align-items:center; gap:8px; }
+    .breadcrumb a { color:var(--primary); }
+    .breadcrumb span { color:var(--light-gray); }
+
+    .story-section { padding:80px 0; }
+    .story-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+    .story-img-wrap { position:relative; border-radius:var(--radius); overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.15); }
+    .story-img-wrap img { width:100%; height:420px; object-fit:cover; }
+    .story-content h2 { font-family:'Playfair Display',serif; font-size:36px; font-weight:800; color:var(--dark); margin-bottom:20px; line-height:1.25; }
+    .story-content h2 span { color:var(--primary); }
+    .story-content p { font-size:15.5px; color:var(--gray); line-height:1.85; margin-bottom:18px; }
+    .story-quote { border-left:4px solid var(--primary); padding:16px 20px; background:var(--bg-alt); border-radius:0 var(--radius-sm) var(--radius-sm) 0; margin:24px 0; font-family:'Playfair Display',serif; font-size:17px; font-style:italic; color:var(--secondary); line-height:1.65; }
+
+    .values-section { padding:72px 0; background:var(--secondary); color:var(--white); }
+    .values-section .section-title { color:var(--white); }
+    .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:40px; }
+    .value-card { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); border-radius:var(--radius); padding:32px 28px; transition:all var(--transition); }
+    .value-card:hover { background:rgba(255,255,255,.12); transform:translateY(-4px); }
+    .value-icon { width:52px; height:52px; background:rgba(232,68,10,.2); border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; color:var(--accent-light); }
+    .value-card h3 { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; margin-bottom:10px; color:var(--white); }
+    .value-card p { font-size:14px; color:rgba(255,255,255,.7); line-height:1.7; }
+
+    .stats-section { padding:72px 0; background:var(--bg-alt); }
+    .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:28px; text-align:center; }
+    .stat-card { background:var(--white); border-radius:var(--radius); padding:36px 24px; box-shadow:var(--card-shadow); }
+    .stat-num { font-family:'Playfair Display',serif; font-size:40px; font-weight:800; color:var(--primary); line-height:1; margin-bottom:10px; }
+    .stat-label { font-size:14px; color:var(--gray); font-weight:500; line-height:1.4; }
+
+    .contact-section { padding:72px 0; }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
+    .contact-block h2 { font-family:'Playfair Display',serif; font-size:32px; font-weight:800; color:var(--dark); margin-bottom:14px; }
+    .contact-block p { font-size:15px; color:var(--gray); line-height:1.8; margin-bottom:28px; }
+    .contact-detail { display:flex; gap:16px; align-items:flex-start; padding:20px 0; border-bottom:1px solid var(--bg-alt); }
+    .contact-detail:last-child { border-bottom:none; }
+    .detail-icon { width:44px; height:44px; background:rgba(232,68,10,.08); border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--primary); }
+    .detail-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--gray); margin-bottom:4px; }
+    .detail-value { font-size:15px; color:var(--dark); font-weight:500; line-height:1.55; }
+    .detail-value a { color:var(--primary); }
+    .detail-value a:hover { text-decoration:underline; }
+    .cta-card { background:linear-gradient(135deg,var(--primary) 0%,#c73a08 100%); border-radius:var(--radius); padding:44px 40px; color:white; }
+    .cta-card h3 { font-family:'Playfair Display',serif; font-size:26px; font-weight:800; margin-bottom:14px; line-height:1.3; }
+    .cta-card p { font-size:15px; opacity:.88; line-height:1.7; margin-bottom:28px; }
+    .btn-white { display:inline-block; background:white; color:var(--primary); font-weight:700; font-size:14px; padding:12px 28px; border-radius:30px; transition:all var(--transition); }
+    .btn-white:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.2); }
+
+    @media(max-width:768px){
+      .story-grid,.contact-grid{grid-template-columns:1fr;}
+      .values-grid{grid-template-columns:1fr 1fr;}
+      .stats-grid{grid-template-columns:1fr 1fr;}
+      .about-hero-content h1{font-size:34px;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 46 46" fill="none">
+          <circle cx="23" cy="23" r="23" fill="#E8440A"/>
+          <path d="M10 23 L38 14 L32 23 L38 32 Z" fill="white" opacity="0.95"/>
+          <circle cx="27" cy="21" r="2" fill="#E8440A"/>
+          <path d="M10 23 L20 26 L18 31 Z" fill="white" opacity="0.7"/>
+          <path d="M14 35 Q23 30 32 35" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+          <circle cx="8" cy="14" r="1.2" fill="#FFD166"/>
+        </svg>
+        <div class="logo-text">
+          <div class="logo-name"><span>Tripsy</span><span>Travel</span></div>
+          <div class="logo-tagline">Wander More, Worry Less</div>
+        </div>
+      </a>
+      <nav id="main-nav">
+        <ul id="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li class="active"><a href="about.html">About</a></li>
+          <li class="nav-cta"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<section class="about-hero">
+  <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80" alt="Travel" />
+  <div class="about-hero-overlay">
+    <div class="container">
+      <div class="about-hero-content">
+        <span class="about-badge">Our Story</span>
+        <h1>Travel Guides You Can Actually Trust</h1>
+        <p>TripsyTravel is built on one simple belief — the best travel advice comes from people who have actually been there.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="index.html">Home</a><span>›</span><span>About Us</span>
+  </div>
+</div>
+
+<section class="story-section">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-img-wrap">
+        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=900&q=80" alt="Travel landscape" />
+      </div>
+      <div class="story-content">
+        <h2>Why We Built <span>TripsyTravel</span></h2>
+        <p>We started TripsyTravel because most travel content online felt disconnected from reality — polished photos, generic tips, and advice written by people who had never set foot in the places they were recommending.</p>
+        <p>We wanted something different. A place where every article is written from personal experience. Where budget realities, honest mistakes, and the messy beauty of travel are front and centre.</p>
+        <div class="story-quote">"We don't write about places we haven't been. That's the only rule that matters."</div>
+        <p>From street food stalls in Bangkok to hiking trails in Patagonia — every guide on TripsyTravel comes from someone who was actually there, ate the food, got lost, and found their way back.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values-section">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center;">What We Stand For</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Honest First</h3>
+        <p>We share what actually happened — the good, the bad, and the overpriced tourist traps. No sugarcoating.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
+        <h3>Real Experience</h3>
+        <p>Every destination we cover, every hotel we recommend — we've been there ourselves, or we don't write about it.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h3>Travel for Everyone</h3>
+        <p>Luxury and budget. Solo and family. We cover the full spectrum because not everyone travels the same way.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3>Respect Local Culture</h3>
+        <p>We travel as guests. Our content always highlights local businesses, communities, and responsible travel practices.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Transparent About Money</h3>
+        <p>We use affiliate links and occasionally partner with brands. We always disclose this clearly — your trust matters more than a commission.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <h3>Always Improving</h3>
+        <p>Travel changes. Prices change. We revisit and update our guides regularly so you're always reading current information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-section">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center;margin-bottom:40px;">TripsyTravel by the Numbers</h2>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-num">50+</div><div class="stat-label">Destinations Covered</div></div>
+      <div class="stat-card"><div class="stat-num">10+</div><div class="stat-label">In-Depth Travel Guides</div></div>
+      <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label">Countries Visited</div></div>
+      <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">First-Hand Experience</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-block">
+        <h2>Get in Touch</h2>
+        <p>Have a question, a collaboration idea, or just want to share a travel story? We'd love to hear from you. Reach out and we'll get back to you within 48 hours.</p>
+        <div class="contact-detail">
+          <div class="detail-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <div class="detail-label">Email</div>
+            <div class="detail-value"><a href="mailto:kushagra@kareerllc.com">kushagra@kareerllc.com</a></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="detail-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="detail-label">Registered Address</div>
+            <div class="detail-value">MICHELLE RODRIGUEZ SOLE MBR<br>30 N Gould St Ste R<br>Sheridan, WY 82801</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="detail-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.09 1.22 2 2 0 012.07.04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div>
+            <div class="detail-label">Response Time</div>
+            <div class="detail-value">Within 24–48 hours</div>
+          </div>
+        </div>
+      </div>
+      <div class="cta-card">
+        <h3>Want to Write for TripsyTravel?</h3>
+        <p>We welcome guest contributors who have genuine, first-hand travel experiences to share. If you've got a story worth telling, we'd love to read your pitch.</p>
+        <a href="contact.html" class="btn-white">Send a Pitch →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="newsletter-content">
+        <h2 class="newsletter-title">Never Miss a Travel Story</h2>
+        <p class="newsletter-sub">Join our readers and get fresh travel guides, tips, and destination ideas straight to your inbox.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email address" class="newsletter-input" />
+        <button type="submit" class="newsletter-btn">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="margin-bottom:14px;display:inline-flex;">
+          <svg class="logo-icon" viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="23" fill="#E8440A"/><path d="M10 23 L38 14 L32 23 L38 32 Z" fill="white" opacity="0.95"/><circle cx="27" cy="21" r="2" fill="#E8440A"/><circle cx="8" cy="14" r="1.2" fill="#FFD166"/></svg>
+          <div class="logo-text"><div class="logo-name"><span>Tripsy</span><span>Travel</span></div><div class="logo-tagline">Wander More, Worry Less</div></div>
+        </a>
+        <p class="footer-desc">TripsyTravel — honest, first-hand travel stories and practical guides from every corner of the globe.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blogs.html">All Blogs</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Legal</div>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="mailto:kushagra@kareerllc.com">kushagra@kareerllc.com</a></li>
+          <li><a href="contact.html">Send a Message</a></li>
+          <li><a href="contact.html">Write for Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TripsyTravel · tripsytravel.info · All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleNav() {
+  document.getElementById('nav-list').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('active');
+}
+</script>
+</body>
+</html>

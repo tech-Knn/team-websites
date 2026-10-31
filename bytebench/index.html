@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="impact-site-verification" value="3d35c4e1-7d13-41ac-bc4b-34d6ef9084db" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ByteBench – Real Numbers. No Hype.</title>
+  <meta name="description" content="ByteBench – Independent PC hardware benchmarks, CPU and GPU reviews, build guides, and performance testing you can actually trust." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.bytebench.info/" />
+  <meta property="og:title" content="ByteBench – Real Numbers. No Hype." />
+  <meta property="og:description" content="Independent PC hardware benchmarks and reviews. We buy the hardware, run the tests, and publish the actual numbers." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ByteBench – Real Numbers. No Hype." />
+  <meta name="twitter:description" content="Independent PC hardware benchmarks and reviews." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <a href="contact.html">FAQ</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="23" cy="23" r="23" fill="#0F172A"/>
+          <rect x="13" y="13" width="20" height="20" rx="2" fill="none" stroke="#6366F1" stroke-width="1.5"/>
+          <rect x="16" y="16" width="14" height="14" rx="1" fill="#6366F1" opacity="0.25"/>
+          <line x1="13" y1="17" x2="10" y2="17" stroke="#818CF8" stroke-width="1.5"/>
+          <line x1="13" y1="21" x2="10" y2="21" stroke="#818CF8" stroke-width="1.5"/>
+          <line x1="13" y1="25" x2="10" y2="25" stroke="#818CF8" stroke-width="1.5"/>
+          <line x1="33" y1="17" x2="36" y2="17" stroke="#818CF8" stroke-width="1.5"/>
+          <line x1="33" y1="21" x2="36" y2="21" stroke="#818CF8" stroke-width="1.5"/>
+          <line x1="33" y1="25" x2="36" y2="25" stroke="#818CF8" stroke-width="1.5"/>
+          <line x1="17" y1="13" x2="17" y2="10" stroke="#818CF8" stroke-width="1.5"/>
+          <line x1="23" y1="13" x2="23" y2="10" stroke="#818CF8" stroke-width="1.5"/>
+          <line x1="29" y1="13" x2="29" y2="10" stroke="#818CF8" stroke-width="1.5"/>
+          <line x1="17" y1="33" x2="17" y2="36" stroke="#818CF8" stroke-width="1.5"/>
+          <line x1="23" y1="33" x2="23" y2="36" stroke="#818CF8" stroke-width="1.5"/>
+          <line x1="29" y1="33" x2="29" y2="36" stroke="#818CF8" stroke-width="1.5"/>
+        </svg>
+        <div class="logo-text">
+          <div class="logo-name"><span>Byte</span><span>Bench</span></div>
+          <div class="logo-tagline">Real Numbers. No Hype.</div>
+        </div>
+      </a>
+
+      <nav id="main-nav">
+        <ul id="nav-list">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="blogs.html?cat=reviews">Reviews</a></li>
+          <li><a href="blogs.html?cat=benchmark">Benchmarks</a></li>
+          <li><a href="blogs.html?cat=builds">Builds</a></li>
+          <li><a href="blogs.html?cat=how-to">How-To</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="nav-cta"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="hamburger" id="hamburger" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="hero-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80" alt="CPU chip close-up" loading="eager" />
+  <div class="hero-overlay">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">Editor's Pick</span>
+        <h1>PC Benchmarks, Done Right.</h1>
+        <p>We buy the hardware, run the tests ourselves, and publish the actual numbers — not manufacturer claims, not paid placement, not cherry-picked workloads.</p>
+        <div class="hero-meta">
+          <span>
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Oct 27, 2026
+          </span>
+          <span>
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            By Ryan Cross
+          </span>
+          <span>
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            13 min read
+          </span>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="blog/best-cpus-2026.html" class="btn btn-primary">Read Full Review ›</a>
+          <a href="#trending" class="btn btn-outline">Explore More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-thumbs">
+    <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=320&q=70" alt="GPU" />
+    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=320&q=70" alt="Laptop" />
+    <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=320&q=70" alt="PC Build" />
+    <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=320&q=70" alt="Monitor" />
+  </div>
+</section>
+
+<div class="trending-strip" id="trending">
+  <div class="container">
+    <div class="trending-inner">
+      <span class="trending-label">Trending</span>
+      <div class="trending-scroll">
+        <a href="blog/best-cpus-2026.html">Best CPUs of 2026 <span class="trending-dot">•</span></a>
+        <a href="blog/best-gpus-2026.html">GPU Buying Guide 2026 <span class="trending-dot">•</span></a>
+        <a href="blog/budget-pc-build-2026.html">$700 PC Build Benchmarked <span class="trending-dot">•</span></a>
+        <a href="blog/amd-vs-intel-2026.html">AMD vs Intel: Who Wins? <span class="trending-dot">•</span></a>
+        <a href="blog/best-ssds-2026.html">PCIe 5.0 SSD — Worth It? <span class="trending-dot">•</span></a>
+        <a href="blog/ram-speed-benchmark.html">Does RAM Speed Matter? <span class="trending-dot">•</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main-layout">
+  <div class="container">
+    <div class="content-grid">
+
+      <main>
+
+        <section>
+          <div class="section-header">
+            <h2 class="section-title">Latest Reviews</h2>
+            <a href="blogs.html" class="see-all">See All Posts ›</a>
+          </div>
+          <div class="cards-grid-3">
+
+            <article class="card">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=75" alt="Best CPUs 2026" loading="lazy" />
+                <span class="card-category">Buying Guides</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title"><a href="blog/best-cpus-2026.html">Best CPUs of 2026: AMD vs Intel — Who Actually Wins at Each Price Point</a></h3>
+                <p class="card-excerpt">We ran Cinebench, Blender, and real gaming tests on seven processors across four price tiers. The results aren't what the marketing would have you believe.</p>
+                <div class="card-meta">
+                  <div class="card-author">
+                    <img src="https://i.pravatar.cc/50?img=15" alt="Ryan Cross" />
+                    <span class="card-author-name">Ryan Cross</span>
+                  </div>
+                  <div class="card-stats">
+                    <span>Oct 27, 2026</span>
+                    <span>13 min read</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=600&q=75" alt="Best GPUs 2026" loading="lazy" />
+                <span class="card-category cat-benchmark">Benchmarks</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title"><a href="blog/best-gpus-2026.html">Best GPUs of 2026: Every Card Benchmarked from $200 to $800</a></h3>
+                <p class="card-excerpt">3DMark, Cyberpunk 2077, and total system power draw at the wall. Fifteen cards tested. Here's where the real value sits in 2026.</p>
+                <div class="card-meta">
+                  <div class="card-author">
+                    <img src="https://i.pravatar.cc/50?img=47" alt="Lisa Kim" />
+                    <span class="card-author-name">Lisa Kim</span>
+                  </div>
+                  <div class="card-stats">
+                    <span>Oct 24, 2026</span>
+                    <span>15 min read</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600&q=75" alt="$700 PC Build" loading="lazy" />
+                <span class="card-category cat-builds">Builds</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title"><a href="blog/budget-pc-build-2026.html">The Best $700 Gaming PC Build of 2026: We Built It, Benchmarked It</a></h3>
+                <p class="card-excerpt">Real parts list at October 2026 prices, real assembly photos, and real benchmark numbers. Cyberpunk at 1080p Ultra hit 78fps average. Here's every component choice explained.</p>
+                <div class="card-meta">
+                  <div class="card-author">
+                    <img src="https://i.pravatar.cc/50?img=68" alt="Marcus Thorn" />
+                    <span class="card-author-name">Marcus Thorn</span>
+                  </div>
+                  <div class="card-stats">
+                    <span>Oct 10, 2026</span>
+                    <span>14 min read</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <section style="margin-top: 48px;">
+          <div class="section-header">
+            <h2 class="section-title">Featured Posts</h2>
+            <a href="blogs.html" class="see-all">See All ›</a>
+          </div>
+          <div class="cards-grid-2">
+
+            <article class="card card-featured">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=75" alt="AMD vs Intel 2026" loading="lazy" />
+                <span class="card-category cat-benchmark">Benchmarks</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title"><a href="blog/amd-vs-intel-2026.html">AMD vs Intel in 2026: A Full Year of Testing, One Honest Answer</a></h3>
+                <p class="card-excerpt">We've been running both platforms side-by-side for twelve months across gaming, video rendering, and productivity workloads. The answer is more nuanced than the forum wars would suggest — but there is a clear winner for most people.</p>
+                <div class="card-meta">
+                  <div class="card-author">
+                    <img src="https://i.pravatar.cc/50?img=15" alt="Ryan Cross" />
+                    <span class="card-author-name">Ryan Cross</span>
+                  </div>
+                  <div class="card-stats">
+                    <span>Oct 18, 2026</span>
+                    <span>11 min read</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <div style="display:flex;flex-direction:column;gap:22px;">
+
+              <article class="card" style="flex-direction:row;height:auto;">
+                <div class="card-img-wrap" style="width:120px;height:100%;flex-shrink:0;border-radius:0;">
+                  <img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=400&q=70" alt="Best SSDs 2026" loading="lazy" />
+                  <span class="card-category" style="font-size:9px;padding:3px 8px;">Reviews</span>
+                </div>
+                <div class="card-body" style="padding:14px;">
+                  <h3 class="card-title" style="font-size:14px;"><a href="blog/best-ssds-2026.html">Best SSDs 2026: Does PCIe 5.0 Actually Make a Difference?</a></h3>
+                  <div class="card-meta"><span style="font-size:11px;color:#64748B;">By Marcus Thorn · Oct 2026</span></div>
+                </div>
+              </article>
+
+              <article class="card" style="flex-direction:row;height:auto;">
+                <div class="card-img-wrap" style="width:120px;height:100%;flex-shrink:0;border-radius:0;">
+                  <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&q=70" alt="Best Gaming Monitors 2026" loading="lazy" />
+                  <span class="card-category cat-guides" style="font-size:9px;padding:3px 8px;">Buying Guides</span>
+                </div>
+                <div class="card-body" style="padding:14px;">
+                  <h3 class="card-title" style="font-size:14px;"><a href="blog/best-gaming-monitors-2026.html">Best Gaming Monitors 2026: 1440p vs 4K — What the Numbers Show</a></h3>
+                  <div class="card-meta"><span style="font-size:11px;color:#64748B;">By Lisa Kim · Oct 2026</span></div>
+                </div>
+              </article>
+
+              <article class="card" style="flex-direction:row;height:auto;">
+                <div class="card-img-wrap" style="width:120px;height:100%;flex-shrink:0;border-radius:0;">
+                  <img src="https://images.unsplash.com/photo-1553984840-b8cbc34f5215?w=400&q=70" alt="RAM Speed Benchmark" loading="lazy" />
+                  <span class="card-category cat-benchmark" style="font-size:9px;padding:3px 8px;">Benchmarks</span>
+                </div>
+                <div class="card-body" style="padding:14px;">
+                  <h3 class="card-title" style="font-size:14px;"><a href="blog/ram-speed-benchmark.html">Does RAM Speed Actually Matter for Gaming? We Tested 8 Kits</a></h3>
+                  <div class="card-meta"><span style="font-size:11px;color:#64748B;">By Ryan Cross · Oct 2026</span></div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+        </section>
+
+        <section style="margin-top: 48px;">
+          <div class="section-header">
+            <h2 class="section-title">Latest Stories</h2>
+            <a href="blogs.html" class="see-all">See All ›</a>
+          </div>
+          <div class="cards-grid-2">
+            <div>
+              <div class="story-card">
+                <img class="story-card-img" src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=200&q=70" alt="Gaming Laptops" loading="lazy" />
+                <div class="story-card-body">
+                  <div class="story-card-cat">Reviews</div>
+                  <div class="story-card-title"><a href="blog/best-gaming-laptops-2026.html">Best Gaming Laptops 2026: Six Tested, One Clear Value Winner</a></div>
+                  <div class="story-card-meta">By Lisa Kim · 12 min read</div>
+                </div>
+              </div>
+              <div class="story-card">
+                <img class="story-card-img" src="https://images.unsplash.com/photo-1524659033952-74c9e3dde18a?w=200&q=70" alt="PC Cases" loading="lazy" />
+                <div class="story-card-body">
+                  <div class="story-card-cat">Buying Guides</div>
+                  <div class="story-card-title"><a href="blog/best-pc-cases-2026.html">Best PC Cases 2026: Airflow Tested, Cable Management Scored</a></div>
+                  <div class="story-card-meta">By Marcus Thorn · 10 min read</div>
+                </div>
+              </div>
+              <div class="story-card">
+                <img class="story-card-img" src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=200&q=70" alt="CPU Overclocking" loading="lazy" />
+                <div class="story-card-body">
+                  <div class="story-card-cat">How-To</div>
+                  <div class="story-card-title"><a href="blog/how-to-overclock-cpu.html">How to Overclock Your CPU Without Breaking It</a></div>
+                  <div class="story-card-meta">By Ryan Cross · 13 min read</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="story-card">
+                <img class="story-card-img" src="https://images.unsplash.com/photo-1553984840-b8cbc34f5215?w=200&q=70" alt="RAM Speed" loading="lazy" />
+                <div class="story-card-body">
+                  <div class="story-card-cat">Benchmarks</div>
+                  <div class="story-card-title"><a href="blog/ram-speed-benchmark.html">DDR5-4800 vs DDR5-7200: Does the Speed Premium Pay Off?</a></div>
+                  <div class="story-card-meta">By Ryan Cross · 9 min read</div>
+                </div>
+              </div>
+              <div class="story-card">
+                <img class="story-card-img" src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=200&q=70" alt="SSDs" loading="lazy" />
+                <div class="story-card-body">
+                  <div class="story-card-cat">Reviews</div>
+                  <div class="story-card-title"><a href="blog/best-ssds-2026.html">Samsung 990 Pro vs Crucial T705: The PCIe 5.0 Question Answered</a></div>
+                  <div class="story-card-meta">By Marcus Thorn · 10 min read</div>
+                </div>
+              </div>
+              <div class="story-card">
+                <img class="story-card-img" src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=200&q=70" alt="GPU Guide" loading="lazy" />
+                <div class="story-card-body">
+                  <div class="story-card-cat">Buying Guides</div>
+                  <div class="story-card-title"><a href="blog/best-gpus-2026.html">RTX 4070 Super vs RX 7900 GRE: The Mid-Range GPU Decision</a></div>
+                  <div class="story-card-meta">By Lisa Kim · 15 min read</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="recent-posts">
+          <div class="section-header">
+            <h2 class="section-title">Recent Posts</h2>
+            <a href="blogs.html" class="see-all">See All ›</a>
+          </div>
+
+          <div class="recent-post-card">
+            <img class="recent-post-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&q=70" alt="Best CPUs 2026" loading="lazy" />
+            <div class="recent-post-body">
+              <div class="recent-post-cat">Buying Guides</div>
+              <h3 class="recent-post-title"><a href="blog/best-cpus-2026.html">Best CPUs of 2026: AMD vs Intel — Who Actually Wins at Each Price Point</a></h3>
+              <p class="recent-post-excerpt">The Ryzen 7 9700X at $329 is still our everyday recommendation, but Intel's Core Ultra 9 285K has closed the gap in single-thread workloads. Full breakdown across four price tiers.</p>
+              <div class="recent-post-meta">
+                <span>By Ryan Cross</span><span>Oct 27, 2026</span><span>13 min read</span><span>19 Comments</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="recent-post-card">
+            <img class="recent-post-img" src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=300&q=70" alt="Best GPUs 2026" loading="lazy" />
+            <div class="recent-post-body">
+              <div class="recent-post-cat">Benchmarks</div>
+              <h3 class="recent-post-title"><a href="blog/best-gpus-2026.html">Best GPUs of 2026: Every Card Benchmarked from $200 to $800</a></h3>
+              <p class="recent-post-excerpt">The RTX 4070 Super remains the rational choice at $549 for 1440p. AMD's RX 7900 GRE at $449 is the value story. Full power draw numbers and real game fps included.</p>
+              <div class="recent-post-meta">
+                <span>By Lisa Kim</span><span>Oct 24, 2026</span><span>15 min read</span><span>34 Comments</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="recent-post-card">
+            <img class="recent-post-img" src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&q=70" alt="Gaming Laptops" loading="lazy" />
+            <div class="recent-post-body">
+              <div class="recent-post-cat">Reviews</div>
+              <h3 class="recent-post-title"><a href="blog/best-gaming-laptops-2026.html">Best Gaming Laptops 2026: We Benchmarked Six, Here's What the Numbers Show</a></h3>
+              <p class="recent-post-excerpt">The MSI Titan 18 is fast but the fan noise is genuinely antisocial. The ASUS TUF A15 at $899 won our value award. Full thermal and fps data across six laptops.</p>
+              <div class="recent-post-meta">
+                <span>By Lisa Kim</span><span>Oct 21, 2026</span><span>12 min read</span><span>11 Comments</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="recent-post-card">
+            <img class="recent-post-img" src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=300&q=70" alt="$700 PC Build" loading="lazy" />
+            <div class="recent-post-body">
+              <div class="recent-post-cat">Builds</div>
+              <h3 class="recent-post-title"><a href="blog/budget-pc-build-2026.html">The Best $700 Gaming PC Build of 2026: We Built It, Benchmarked It</a></h3>
+              <p class="recent-post-excerpt">Ryzen 5 7600, RX 7700 XT, 16GB DDR5. Full parts list, build notes, and real game benchmarks. This build destroys any prebuilt at the same price.</p>
+              <div class="recent-post-meta">
+                <span>By Marcus Thorn</span><span>Oct 10, 2026</span><span>14 min read</span><span>27 Comments</span>
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </main>
+
+      <aside class="sidebar">
+
+        <div class="sidebar-widget about-widget">
+          <div class="widget-header">
+            <div class="widget-title">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              About ByteBench
+            </div>
+          </div>
+          <div class="widget-body">
+            <img class="about-avatar" src="https://i.pravatar.cc/150?img=15" alt="Ryan Cross" />
+            <div class="about-name">ByteBench</div>
+            <p class="about-desc">We test hardware so <em>you</em> don't waste money. Every benchmark comes from our own systems — no manufacturer test beds, no cherry-picked conditions.</p>
+          </div>
+        </div>
+
+        <div class="sidebar-widget newsletter-widget">
+          <div class="widget-header">
+            <div class="widget-title">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Weekly Newsletter
+            </div>
+          </div>
+          <div class="widget-body">
+            <p style="font-size:13px;color:#64748B;margin-bottom:14px;">New benchmarks and build guides, straight to your inbox. No spam.</p>
+            <input class="newsletter-input" type="text" placeholder="Your Name" />
+            <input class="newsletter-input" type="email" placeholder="your@email.com" />
+            <button class="btn-newsletter">Subscribe</button>
+            <p class="newsletter-note">Unsubscribe anytime.</p>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-header">
+            <div class="widget-title">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+              Popular Posts
+            </div>
+          </div>
+          <div class="widget-body">
+            <div class="pop-post">
+              <span class="pop-post-num">01</span>
+              <div>
+                <div class="pop-post-title"><a href="blog/best-cpus-2026.html">Best CPUs of 2026: Full Rankings</a></div>
+                <div class="pop-post-meta">Oct 27, 2026 · 13 min</div>
+              </div>
+            </div>
+            <div class="pop-post">
+              <span class="pop-post-num">02</span>
+              <div>
+                <div class="pop-post-title"><a href="blog/amd-vs-intel-2026.html">AMD vs Intel: The Honest Truth</a></div>
+                <div class="pop-post-meta">Oct 18, 2026 · 11 min</div>
+              </div>
+            </div>
+            <div class="pop-post">
+              <span class="pop-post-num">03</span>
+              <div>
+                <div class="pop-post-title"><a href="blog/budget-pc-build-2026.html">$700 PC Build — Fully Benchmarked</a></div>
+                <div class="pop-post-meta">Oct 10, 2026 · 14 min</div>
+              </div>
+            </div>
+            <div class="pop-post">
+              <span class="pop-post-num">04</span>
+              <div>
+                <div class="pop-post-title"><a href="blog/best-gpus-2026.html">Best GPUs Under $600</a></div>
+                <div class="pop-post-meta">Oct 24, 2026 · 15 min</div>
+              </div>
+            </div>
+            <div class="pop-post">
+              <span class="pop-post-num">05</span>
+              <div>
+                <div class="pop-post-title"><a href="blog/ram-speed-benchmark.html">Does RAM Speed Matter for Gaming?</a></div>
+                <div class="pop-post-meta">Oct 3, 2026 · 9 min</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-header">
+            <div class="widget-title">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+              Categories
+            </div>
+          </div>
+          <div class="widget-body">
+            <div class="cat-item"><a href="blogs.html"><span class="cat-dot"></span>Reviews</a><span class="cat-count">5</span></div>
+            <div class="cat-item"><a href="blogs.html"><span class="cat-dot" style="background:#06B6D4"></span>Benchmarks</a><span class="cat-count">3</span></div>
+            <div class="cat-item"><a href="blogs.html"><span class="cat-dot" style="background:#0F172A"></span>Builds</a><span class="cat-count">1</span></div>
+            <div class="cat-item"><a href="blogs.html"><span class="cat-dot" style="background:#F59E0B"></span>How-To</a><span class="cat-count">1</span></div>
+            <div class="cat-item"><a href="blogs.html"><span class="cat-dot" style="background:#10B981"></span>Buying Guides</a><span class="cat-count">3</span></div>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-header">
+            <div class="widget-title">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+              Popular Tags
+            </div>
+          </div>
+          <div class="widget-body">
+            <div class="tags-list">
+              <a href="javascript:void(0)" class="tag">AMD</a>
+              <a href="javascript:void(0)" class="tag">Intel</a>
+              <a href="javascript:void(0)" class="tag">NVIDIA</a>
+              <a href="javascript:void(0)" class="tag">Ryzen</a>
+              <a href="javascript:void(0)" class="tag">RTX</a>
+              <a href="javascript:void(0)" class="tag">Gaming</a>
+              <a href="javascript:void(0)" class="tag">PCIe 5.0</a>
+              <a href="javascript:void(0)" class="tag">DDR5</a>
+              <a href="javascript:void(0)" class="tag">Budget Build</a>
+              <a href="javascript:void(0)" class="tag">Overclocking</a>
+              <a href="javascript:void(0)" class="tag">1440p</a>
+              <a href="javascript:void(0)" class="tag">4K Gaming</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-header">
+            <div class="widget-title">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Hardware Gallery
+            </div>
+          </div>
+          <div class="widget-body" style="padding:12px;">
+            <div class="gallery-grid">
+              <div class="gallery-item"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=200&q=70" alt="CPU" loading="lazy"/></div>
+              <div class="gallery-item"><img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=200&q=70" alt="GPU" loading="lazy"/></div>
+              <div class="gallery-item"><img src="https://images.unsplash.com/photo-1553984840-b8cbc34f5215?w=200&q=70" alt="RAM" loading="lazy"/></div>
+              <div class="gallery-item"><img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=200&q=70" alt="SSD" loading="lazy"/></div>
+              <div class="gallery-item"><img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=200&q=70" alt="Monitor" loading="lazy"/></div>
+              <div class="gallery-item"><img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=200&q=70" alt="PC Build" loading="lazy"/></div>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</div>
+
+<section class="categories-strip">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Browse by Category</h2>
+      <a href="blogs.html" class="see-all">View All Posts ›</a>
+    </div>
+    <div class="dest-grid">
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=75" alt="Reviews" loading="lazy" />
+        <div class="dest-overlay">
+          <div class="dest-name">Reviews</div>
+          <div class="dest-count">42 articles</div>
+        </div>
+      </div>
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=600&q=70" alt="Benchmarks" loading="lazy" />
+        <div class="dest-overlay">
+          <div class="dest-name">Benchmarks</div>
+          <div class="dest-count">28 articles</div>
+        </div>
+      </div>
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600&q=70" alt="Builds" loading="lazy" />
+        <div class="dest-overlay">
+          <div class="dest-name">Builds</div>
+          <div class="dest-count">17 articles</div>
+        </div>
+      </div>
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&q=70" alt="How-To" loading="lazy" />
+        <div class="dest-overlay">
+          <div class="dest-name">How-To</div>
+          <div class="dest-count">22 articles</div>
+        </div>
+      </div>
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&q=70" alt="Buying Guides" loading="lazy" />
+        <div class="dest-overlay">
+          <div class="dest-name">Buying Guides</div>
+          <div class="dest-count">31 articles</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="highlight-strip">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Latest Highlights</h2>
+      <a href="blogs.html" class="see-all">See All ›</a>
+    </div>
+    <div class="cards-grid-3">
+      <div class="highlight-card">
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=75" alt="AMD vs Intel" loading="lazy" />
+        <div class="highlight-overlay">
+          <div class="highlight-cat">Benchmarks</div>
+          <div class="highlight-title">AMD vs Intel 2026: Platform Performance Compared</div>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <img src="https://images.unsplash.com/photo-1553984840-b8cbc34f5215?w=600&q=75" alt="RAM Speed" loading="lazy" />
+        <div class="highlight-overlay">
+          <div class="highlight-cat">Benchmarks</div>
+          <div class="highlight-title">RAM Speed Tested: Does DDR5-7200 Actually Help?</div>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <img src="https://images.unsplash.com/photo-1524659033952-74c9e3dde18a?w=600&q=75" alt="PC Cases" loading="lazy" />
+        <div class="highlight-overlay">
+          <div class="highlight-cat">Buying Guides</div>
+          <div class="highlight-title">PC Case Airflow Test: Five Cases, One Winner</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-banner">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">300+</div>
+        <div class="stat-label">Products Tested</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Categories Covered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Independent Testing</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">Zero</div>
+        <div class="stat-label">Paid Reviews</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="newsletter-section">
+  <div class="container">
+    <h2>Get New Benchmarks by Email</h2>
+    <p>We publish new reviews and build guides a few times a month. No filler, no affiliate-first recommendations.</p>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" placeholder="Enter your email address…" />
+      <button type="submit">Subscribe</button>
+    </form>
+    <p style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:12px;">No spam. Unsubscribe at any time.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="margin-bottom:14px;display:inline-flex;">
+          <svg class="logo-icon" viewBox="0 0 46 46" fill="none">
+            <circle cx="23" cy="23" r="23" fill="#0F172A"/>
+            <rect x="13" y="13" width="20" height="20" rx="2" fill="none" stroke="#6366F1" stroke-width="1.5"/>
+            <rect x="16" y="16" width="14" height="14" rx="1" fill="#6366F1" opacity="0.25"/>
+            <line x1="13" y1="17" x2="10" y2="17" stroke="#818CF8" stroke-width="1.5"/>
+            <line x1="33" y1="21" x2="36" y2="21" stroke="#818CF8" stroke-width="1.5"/>
+            <line x1="23" y1="13" x2="23" y2="10" stroke="#818CF8" stroke-width="1.5"/>
+            <line x1="23" y1="33" x2="23" y2="36" stroke="#818CF8" stroke-width="1.5"/>
+          </svg>
+          <div class="logo-text">
+            <div class="logo-name footer-logo-name"><span>Byte</span><span>Bench</span></div>
+            <div class="logo-tagline">Real Numbers. No Hype.</div>
+          </div>
+        </a>
+        <p class="footer-desc">ByteBench delivers independent hardware benchmarks and PC build guides. We run every test ourselves on our own hardware — no manufacturer conditions, no paid placements.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blogs.html">All Posts</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Categories</div>
+        <ul class="footer-links">
+          <li><a href="blogs.html?cat=reviews">Reviews</a></li>
+          <li><a href="blogs.html?cat=benchmark">Benchmarks</a></li>
+          <li><a href="blogs.html?cat=builds">Builds</a></li>
+          <li><a href="blogs.html?cat=how-to">How-To</a></li>
+          <li><a href="blogs.html?cat=guides">Buying Guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Our Gallery</div>
+        <div class="footer-gallery">
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=150&q=65" alt="CPU" loading="lazy"/></div>
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=150&q=65" alt="GPU" loading="lazy"/></div>
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1553984840-b8cbc34f5215?w=150&q=65" alt="RAM" loading="lazy"/></div>
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=150&q=65" alt="SSD" loading="lazy"/></div>
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=150&q=65" alt="Monitor" loading="lazy"/></div>
+          <div class="footer-gallery-item"><img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=150&q=65" alt="Build" loading="lazy"/></div>
+        </div>
+        <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:12px;"><em>Affiliate Disclosure: ByteBench participates in affiliate programs. We may earn a small commission on purchases at no extra cost to you.</em></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ByteBench · bytebench.info · All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</div>
+
+<script>
+  function toggleNav() {
+    document.getElementById('nav-list').classList.toggle('open');
+  }
+  window.addEventListener('scroll', () => {
+    document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+  });
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    header.style.boxShadow = window.scrollY > 10 ? '0 4px 30px rgba(0,0,0,0.12)' : '0 2px 20px rgba(0,0,0,0.08)';
+  });
+</script>
+
+</body>
+</html>

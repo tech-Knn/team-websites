@@ -286,10 +286,10 @@
         <aside class="sidebar">
           <div class="sidebar-widget">
             <h3 class="widget-title">Newsletter</h3>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">New unboxing in your inbox. We send when something drops, not on a schedule.</p>
             <form class="sidebar-form" onsubmit="return false;">
+              <p>New unboxing in your inbox. We send when something drops, not on a schedule.</p>
               <input type="email" placeholder="Your email address" />
-              <button type="submit">Subscribe</button>
+              <button type="submit">Subscribe Free</button>
             </form>
           </div>
           <div class="sidebar-widget">
@@ -315,8 +315,10 @@
           </div>
           <div class="sidebar-widget">
             <h3 class="widget-title">About Geeks on Gear</h3>
-            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7;">We buy the products, open the box, and write down what we find — including the stuff brands would rather you not notice until after the return window closes.</p>
-            <a href="about.html" style="font-size: 0.9rem; color: var(--primary); font-weight: 600;">Meet the team →</a>
+            <div style="padding: 16px 18px;">
+              <p style="font-size: 13.5px; color: var(--muted); line-height: 1.7; margin-bottom: 12px;">We buy the products, open the box, and write down what we find — including the stuff brands would rather you not notice until after the return window closes.</p>
+              <a href="about.html" style="font-size: 13.5px; color: var(--primary); font-weight: 700;">Meet the team →</a>
+            </div>
           </div>
           <div class="sidebar-widget">
             <h3 class="widget-title">Recent Reviews</h3>
@@ -501,13 +503,20 @@
     </div>
   </footer>
 
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+
   <script>
     const hamburger = document.getElementById('hamburger');
     const mainNav = document.getElementById('mainNav');
     hamburger.addEventListener('click', () => {
       mainNav.classList.toggle('open');
-      hamburger.classList.toggle('active');
     });
+
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 </body>
 </html>

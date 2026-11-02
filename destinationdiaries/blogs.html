@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Blog — Destination Diaries</title>
+  <meta name="description" content="Browse all travel stories on Destination Diaries — adventure diaries, cultural deep-dives, hidden gems, wildlife safaris, and road trips from around the world.">
+  <meta name="impact-site-verification" content="b8c4d2e3-3f5g-6789-bcde-fg1234567890">
+  <link rel="canonical" href="https://www.destinationdiaries.info/blogs.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="site-logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <rect width="28" height="28" rx="6" fill="var(--primary)"/>
+        <path d="M7 8h14M7 12h10M7 16h12M7 20h8" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="21" cy="18" r="4" fill="var(--accent)"/>
+        <path d="M20 18h2M21 17v2" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+      Destination Diaries
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blogs.html" class="active">Stories</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="archive-hero">
+    <div class="container">
+      <h1>All Travel Stories</h1>
+      <p>47 countries. 120+ diaries. Real journeys, honestly told.</p>
+    </div>
+  </section>
+
+  <div class="filter-bar" id="filterBar">
+    <div class="container">
+      <button class="filter-btn active" data-filter="all">All Stories</button>
+      <button class="filter-btn" data-filter="adventure">Adventure</button>
+      <button class="filter-btn" data-filter="culture">Culture</button>
+      <button class="filter-btn" data-filter="hidden">Hidden Gems</button>
+      <button class="filter-btn" data-filter="solo">Solo Travel</button>
+      <button class="filter-btn" data-filter="roadtrip">Road Trips</button>
+      <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+    </div>
+  </div>
+
+  <section style="padding:60px 0;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start;">
+        <div>
+
+          <article class="featured-archive-post" data-cat="hidden">
+            <div class="featured-archive-image">
+              <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=900&q=80" alt="Southeast Asia hidden gems">
+            </div>
+            <div class="featured-archive-content">
+              <span class="post-cat cat-hidden">Hidden Gems</span>
+              <h2><a href="blog/hidden-gems-southeast-asia.html">12 Hidden Gems in Southeast Asia Most Tourists Never Find</a></h2>
+              <p class="post-excerpt">Beyond Bali and Bangkok lies a Southeast Asia that few travelers ever witness. We spent four months finding the islands, mountain villages, and river towns that the guidebooks skip.</p>
+              <div class="post-meta">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80" alt="Priya Nair" class="author-avatar">
+                <div>
+                  <span class="author-name">Priya Nair</span>
+                  <span class="post-date">November 1, 2026 · 14 min read</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <div id="blogList">
+            <article class="blog-list-item" data-cat="culture">
+              <div class="blog-list-image">
+                <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=400&q=80" alt="Morocco travel diary">
+              </div>
+              <div class="blog-list-content">
+                <span class="post-cat cat-culture">Culture</span>
+                <h3><a href="blog/morocco-travel-diary.html">A Morocco Travel Diary: Medinas, Mountains & Moonlit Deserts</a></h3>
+                <p>Two weeks across Morocco — from the labyrinthine medinas of Fes to the Sahara dunes at Merzouga. Here's the itinerary I wish I'd had.</p>
+                <div class="post-meta"><span class="author-name">Kwame Asante</span><span class="post-date">Oct 28, 2026 · 11 min</span></div>
+              </div>
+            </article>
+
+            <article class="blog-list-item" data-cat="adventure">
+              <div class="blog-list-image">
+                <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&q=80" alt="Patagonia hiking guide">
+              </div>
+              <div class="blog-list-content">
+                <span class="post-cat cat-adventure">Adventure</span>
+                <h3><a href="blog/patagonia-hiking-guide.html">Patagonia Hiking Guide: Torres del Paine W Trek Breakdown</a></h3>
+                <p>The W Trek is one of the world's great hikes. Here's every camp, every viewpoint, and every lesson learned across five epic days at the end of the world.</p>
+                <div class="post-meta"><span class="author-name">Priya Nair</span><span class="post-date">Oct 25, 2026 · 16 min</span></div>
+              </div>
+            </article>
+
+            <article class="blog-list-item" data-cat="culture">
+              <div class="blog-list-image">
+                <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=400&q=80" alt="Portugal food and culture">
+              </div>
+              <div class="blog-list-content">
+                <span class="post-cat cat-culture">Culture</span>
+                <h3><a href="blog/portugal-food-culture.html">Portugal Through Food: A Culinary Journey from Lisbon to Porto</a></h3>
+                <p>Pastéis de nata at dawn, bacalhau at noon, wine at dusk. Portuguese food culture is among Europe's most overlooked — and most rewarding to explore.</p>
+                <div class="post-meta"><span class="author-name">Sofia Cabral</span><span class="post-date">Oct 22, 2026 · 10 min</span></div>
+              </div>
+            </article>
+
+            <article class="blog-list-item" data-cat="roadtrip">
+              <div class="blog-list-image">
+                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&q=80" alt="New Zealand road trip">
+              </div>
+              <div class="blog-list-content">
+                <span class="post-cat cat-roadtrip">Road Trip</span>
+                <h3><a href="blog/new-zealand-road-trip.html">New Zealand South Island Road Trip: 14 Days, One Van, Zero Regrets</a></h3>
+                <p>We rented a campervan and drove the South Island from Christchurch to Fiordland and back. This is the full route, with campsite recommendations and driving times.</p>
+                <div class="post-meta"><span class="author-name">Kwame Asante</span><span class="post-date">Oct 19, 2026 · 13 min</span></div>
+              </div>
+            </article>
+
+            <article class="blog-list-item" data-cat="culture">
+              <div class="blog-list-image">
+                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=400&q=80" alt="Santorini honest review">
+              </div>
+              <div class="blog-list-content">
+                <span class="post-cat cat-culture">Culture</span>
+                <h3><a href="blog/santorini-honest-review.html">Santorini: An Honest Review After 5 Days of Crowds, Cliffs & Caldera Views</a></h3>
+                <p>Is Santorini worth the hype (and the price tag)? After five days navigating the cruise-ship crowds, here's the real answer — plus how to actually enjoy it.</p>
+                <div class="post-meta"><span class="author-name">Sofia Cabral</span><span class="post-date">Oct 16, 2026 · 9 min</span></div>
+              </div>
+            </article>
+
+            <article class="blog-list-item" data-cat="hidden">
+              <div class="blog-list-image">
+                <img src="https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?w=400&q=80" alt="Colombia travel guide">
+              </div>
+              <div class="blog-list-content">
+                <span class="post-cat cat-hidden">Hidden Gems</span>
+                <h3><a href="blog/colombia-travel-guide.html">Colombia Off the Beaten Path: Beyond Cartagena & Medellín</a></h3>
+                <p>Colombia's coffee region, the lost city, and the Pacific coast — the parts of the country that reveal its real soul, far from the well-worn tourist trail.</p>
+                <div class="post-meta"><span class="author-name">Priya Nair</span><span class="post-date">Oct 13, 2026 · 12 min</span></div>
+              </div>
+            </article>
+
+            <article class="blog-list-item" data-cat="culture">
+              <div class="blog-list-image">
+                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&q=80" alt="Vietnam two weeks">
+              </div>
+              <div class="blog-list-content">
+                <span class="post-cat cat-culture">Culture</span>
+                <h3><a href="blog/vietnam-two-weeks.html">Vietnam in Two Weeks: A North-to-South Diary with Real Costs</a></h3>
+                <p>Hanoi to Ho Chi Minh City — by plane, overnight train, and motorbike. The cities, the countryside, the food, and what two weeks in Vietnam actually costs.</p>
+                <div class="post-meta"><span class="author-name">Kwame Asante</span><span class="post-date">Oct 10, 2026 · 15 min</span></div>
+              </div>
+            </article>
+
+            <article class="blog-list-item" data-cat="adventure">
+              <div class="blog-list-image">
+                <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=400&q=80" alt="Iceland northern lights">
+              </div>
+              <div class="blog-list-content">
+                <span class="post-cat cat-adventure">Adventure</span>
+                <h3><a href="blog/iceland-northern-lights.html">Chasing the Northern Lights in Iceland: What Nobody Tells You</a></h3>
+                <p>I spent 10 nights in Iceland waiting for the aurora. Here's what I learned about the best locations, the best apps, and why patience is the only real strategy.</p>
+                <div class="post-meta"><span class="author-name">Sofia Cabral</span><span class="post-date">Oct 7, 2026 · 11 min</span></div>
+              </div>
+            </article>
+
+            <article class="blog-list-item" data-cat="wildlife">
+              <div class="blog-list-image">
+                <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=400&q=80" alt="Kenya safari diary">
+              </div>
+              <div class="blog-list-content">
+                <span class="post-cat cat-wildlife">Wildlife</span>
+                <h3><a href="blog/kenya-safari-diary.html">Kenya Safari Diary: 8 Days in the Masai Mara & Amboseli</a></h3>
+                <p>Eight unforgettable days in Kenya — the great migration, lion hunts at dawn, and elephants against Kilimanjaro at dusk. Here's every detail of how to plan it.</p>
+                <div class="post-meta"><span class="author-name">Priya Nair</span><span class="post-date">Oct 4, 2026 · 14 min</span></div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <aside class="sidebar">
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Subscribe</h3>
+            <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:16px;">New diaries in your inbox every week.</p>
+            <form class="sidebar-form">
+              <p><input type="email" placeholder="Your email address"></p>
+              <p><button type="submit">Subscribe Free</button></p>
+            </form>
+          </div>
+
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Popular Stories</h3>
+            <ul class="popular-list">
+              <li><a href="blog/kenya-safari-diary.html">Kenya Safari: Masai Mara & Amboseli</a><span>14 min read</span></li>
+              <li><a href="blog/patagonia-hiking-guide.html">Patagonia W Trek Breakdown</a><span>16 min read</span></li>
+              <li><a href="blog/vietnam-two-weeks.html">Vietnam in Two Weeks</a><span>15 min read</span></li>
+              <li><a href="blog/hidden-gems-southeast-asia.html">12 Hidden Gems in SE Asia</a><span>14 min read</span></li>
+              <li><a href="blog/new-zealand-road-trip.html">New Zealand Road Trip</a><span>13 min read</span></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Categories</h3>
+            <div class="tag-cloud">
+              <a href="#" class="tag" data-filter="adventure">Adventure</a>
+              <a href="#" class="tag" data-filter="culture">Culture</a>
+              <a href="#" class="tag" data-filter="hidden">Hidden Gems</a>
+              <a href="#" class="tag" data-filter="solo">Solo Travel</a>
+              <a href="#" class="tag" data-filter="roadtrip">Road Trip</a>
+              <a href="#" class="tag" data-filter="wildlife">Wildlife</a>
+            </div>
+          </div>
+
+          <div class="sidebar-widget">
+            <h3 class="widget-title">Writers</h3>
+            <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;">
+              <li style="display:flex;align-items:center;gap:12px;">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80" alt="Priya Nair" style="width:40px;height:40px;border-radius:50%;object-fit:cover;">
+                <div><p style="font-weight:600;font-size:.875rem;margin:0;">Priya Nair</p><p style="color:var(--text-muted);font-size:.8rem;margin:0;">Asia & Trekking</p></div>
+              </li>
+              <li style="display:flex;align-items:center;gap:12px;">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="Kwame Asante" style="width:40px;height:40px;border-radius:50%;object-fit:cover;">
+                <div><p style="font-weight:600;font-size:.875rem;margin:0;">Kwame Asante</p><p style="color:var(--text-muted);font-size:.8rem;margin:0;">Africa & Americas</p></div>
+              </li>
+              <li style="display:flex;align-items:center;gap:12px;">
+                <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&q=80" alt="Sofia Cabral" style="width:40px;height:40px;border-radius:50%;object-fit:cover;">
+                <div><p style="font-weight:600;font-size:.875rem;margin:0;">Sofia Cabral</p><p style="color:var(--text-muted);font-size:.8rem;margin:0;">Europe & Culture</p></div>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="site-logo" style="margin-bottom:12px;display:inline-flex;">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="var(--primary)"/><path d="M7 8h14M7 12h10M7 16h12M7 20h8" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Destination Diaries
+        </a>
+        <p>Authentic travel stories from real journeys across 47 countries.</p>
+        <p style="font-size:.8rem;opacity:.6;margin-top:8px;">Affiliate Disclosure: Some links earn us a commission at no extra cost to you.</p>
+      </div>
+      <div class="footer-links"><h4>Explore</h4><ul><li><a href="blogs.html">All Stories</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-links"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Destination Diaries · KNN SYNDICATE LLC · hello@destinationdiaries.info</p></div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Back to top">&#8679;</button>
+<script>
+  document.getElementById('hamburger').addEventListener('click',function(){document.getElementById('mainNav').classList.toggle('open');});
+  const st=document.getElementById('scrollTop');
+  window.addEventListener('scroll',()=>{st.classList.toggle('visible',window.scrollY>400);});
+  st.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+
+  const buttons=document.querySelectorAll('.filter-btn');
+  const items=document.querySelectorAll('#blogList .blog-list-item, .featured-archive-post');
+  buttons.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      buttons.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f=btn.dataset.filter;
+      items.forEach(item=>{
+        item.style.display=(f==='all'||item.dataset.cat===f)?'':'none';
+      });
+    });
+  });
+
+  const tagLinks=document.querySelectorAll('.tag-cloud .tag');
+  tagLinks.forEach(link=>{
+    link.addEventListener('click',e=>{
+      e.preventDefault();
+      const f=link.dataset.filter;
+      buttons.forEach(b=>{b.classList.toggle('active',b.dataset.filter===f);});
+      items.forEach(item=>{item.style.display=(item.dataset.cat===f)?'':'none';});
+    });
+  });
+
+  window.addEventListener('scroll',()=>{
+    const bar=document.getElementById('filterBar');
+    if(bar) bar.classList.toggle('sticky',window.scrollY>200);
+  });
+</script>
+</body>
+</html>
